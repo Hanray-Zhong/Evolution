@@ -76,12 +76,12 @@ public class PlayerController_ : MonoBehaviour {
 			velocity = Mathf.Abs(gameObject.GetComponent<Rigidbody2D>().velocity.magnitude * Mathf.Cos(angle));
 			Debug.Log("相对速度:" + velocity);
 			if (velocity > 5) {
-				Impluse(other.gameObject, thisToOther, velocity);
+				Impluse(other.gameObject, thisToOther, velocity, other.gameObject.GetComponent<PlayerUnit>().Weight);
 			}
 		}
 	}
-	private void Impluse(GameObject target, Vector2 Dir, float velocity) {
+	private void Impluse(GameObject target, Vector2 Dir, float velocity, float weight) {
 		Debug.Log("ImpluseCoefficient:" + ImpluseCoefficient);
-		target.gameObject.GetComponent<Rigidbody2D>().AddForce(Dir.normalized * velocity * ImpluseCoefficient, ForceMode2D.Impulse);
+		target.gameObject.GetComponent<Rigidbody2D>().AddForce(Dir.normalized * velocity * ImpluseCoefficient / weight, ForceMode2D.Impulse);
 	}
 }
