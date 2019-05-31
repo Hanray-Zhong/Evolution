@@ -13,14 +13,19 @@ public class PlayerController_ : MonoBehaviour {
 	public float Speed;
 	public float Impulse_force;
 	public float Drag;
+	[Header("Impluse")]
+	public float ImpluseCoefficient;
 
 	void FixedUpdate () {
-		InputConfiguration ();
-		StartMove ();
+		InputConfiguration();
+		StartMove();
 		Impulse();
 		VisibleImpulseForce();
 	}
 	void InputConfiguration () {
+		if (gameInput == null) {
+			return;
+		}
 		MoveDir = gameInput.GetMoveDir();
 		impulseOffset = gameInput.GetInputInteraction() - impulse;
 		impulse = gameInput.GetInputInteraction();
@@ -62,10 +67,21 @@ public class PlayerController_ : MonoBehaviour {
 		gameObject.GetComponent<SpriteRenderer>().color = color;
 	}
 	private void OnCollisionEnter2D(Collision2D other) {
-		if (other.gameObject.tag == "Player") {
-			if (other.gameObject.GetComponent<Rigidbody2D>().velocity.magnitude > 6.5f) {
-				Debug.Log("Impulse");
+		if (other.gameObject.tag == "Player"  && impulse_cd != 0) {
+			Debug.Log("物体速度:" + other.gameObject.GetComponent<Rigidbody2D>().velocity.magnitude);
+			// 计算玩家在两者连线上的速度大小
+			float velocity;
+			Vector2 thisToOther = other.gameObject.transform.position - gameObject.transform.position;
+			float angle = Vector2.Angle(gameObject.GetComponent<Rigidbody2D>().velocity, thisToOther);
+			velocity = Mathf.Abs(gameObject.GetComponent<Rigidbody2D>().velocity.magnitude * Mathf.Cos(angle));
+			Debug.Log("相对速度:" + velocity);
+			if (velocity > 5) {
+				Impluse(other.gameObject, thisToOther, velocity);
 			}
 		}
+	}
+	private void Impluse(GameObject target, Vector2 Dir, float velocity) {
+		Debug.Log("ImpluseCoefficient:" + ImpluseCoefficient);
+		target.gameObject.GetComponent<Rigidbody2D>().AddForce(Dir.normalized * velocity * ImpluseCoefficient, ForceMode2D.Impulse);
 	}
 }
