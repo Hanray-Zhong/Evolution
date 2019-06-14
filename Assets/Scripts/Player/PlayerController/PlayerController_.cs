@@ -5,12 +5,13 @@ using UnityEngine;
 public class PlayerController_ : MonoBehaviour {
 	private float impulse;
 	private float impulseOffset;
-	public float impulse_cd = 0;
 	private Vector2 MoveDir;
+	[Header("Controller")]
+	public bool IsControlled = false;
+	public bool ImpluseEnd = true;
 	public GameInput gameInput;
-
 	[Header("Move")]
-	public float Speed;
+	public GameObject DirectionArrow;
 	public float Impulse_force;
 	public float Drag;
 	[Header("Impluse")]
@@ -20,10 +21,10 @@ public class PlayerController_ : MonoBehaviour {
 		InputConfiguration();
 		StartMove();
 		Impulse();
-		VisibleImpulseForce();
+		VisibleIsControlled();
 	}
 	void InputConfiguration () {
-		if (gameInput == null) {
+		if (gameInput == null || ImpluseEnd) {
 			return;
 		}
 		MoveDir = gameInput.GetMoveDir();
@@ -32,42 +33,38 @@ public class PlayerController_ : MonoBehaviour {
 	}
 	void StartMove () {
 		this.gameObject.GetComponent<Rigidbody2D>().drag = Drag;
-		this.gameObject.GetComponent<Rigidbody2D>().AddForce(MoveDir * Speed * Time.deltaTime);
+		if (DirectionArrow != null) {
+			DirectionArrow.GetComponent<Transform>().localScale = new Vector3(Impulse_force / 25, Impulse_force / 25, Impulse_force / 25);
+			gameObject.transform.up = MoveDir;
+		}
 	}
 	void Impulse() {
-		if (impulse == 1 && Impulse_force <= 25 && impulse_cd == 0) {
+		if (impulse == 1 && Impulse_force <= 25) {
 			Impulse_force += 0.5f;
 		}
-		else if (impulseOffset < 0 && impulse_cd == 0) {
+		else if (impulseOffset < 0) {
 			this.gameObject.GetComponent<Rigidbody2D>().AddForce(MoveDir * Impulse_force, ForceMode2D.Impulse);
-			Impulse_force = 10;
-			impulse_cd++;
+			Impulse_force = 0;
+			ImpluseEnd = true;
 		}
 		else if (impulse == 0) {
-			Impulse_force = 10;
-		}
-		if (impulse_cd != 0) {
-			impulse_cd++;
-		}
-		if (impulse_cd >= 90) {
-			impulse_cd = 0;
+			Impulse_force = 0;
 		}
 	}
-	void VisibleImpulseForce() {
-		if (impulse_cd != 0) {
-			Color color_in_cd = new Color(0, 0, 0, 0.5f);
+	void VisibleIsControlled() {
+		if (IsControlled) {
+			Color color_in_cd = new Color(0, 0, 0, 1f);
 			gameObject.GetComponent<SpriteRenderer>().color = color_in_cd;
 			return;
 		}
 		else {
-			Color color_ready = new Color(0, 0, 0, 1);
+			Color color_ready = new Color(0, 0, 0, 0.5f);
 			gameObject.GetComponent<SpriteRenderer>().color = color_ready;
 		}
-		Color color = new Color((Impulse_force - 10) / 15, 0, 0);
-		gameObject.GetComponent<SpriteRenderer>().color = color;
 	}
+	// 碰撞物理引擎
 	private void OnCollisionEnter2D(Collision2D other) {
-		if (other.gameObject.tag == "Player"  && impulse_cd != 0) {
+		if (other.gameObject.tag == "Player" && IsControlled) {
 			Debug.Log("物体速度:" + other.gameObject.GetComponent<Rigidbody2D>().velocity.magnitude);
 			// 计算玩家在两者连线上的速度大小
 			float velocity;
@@ -77,8 +74,13 @@ public class PlayerController_ : MonoBehaviour {
 			Debug.Log("相对速度:" + velocity);
 			if (velocity > 5) {
 				Impluse(other.gameObject, thisToOther, velocity, other.gameObject.GetComponent<PlayerUnit>().Weight);
+				this.gameObject.GetComponent<Rigidbody2D>().drag = 30;
 			}
 		}
+	}
+	
+	private void OnCollisionExit2D(Collision2D other) {
+		this.gameObject.GetComponent<Rigidbody2D>().drag = Drag;
 	}
 	private void Impluse(GameObject target, Vector2 Dir, float velocity, float weight) {
 		Debug.Log("ImpluseCoefficient:" + ImpluseCoefficient);

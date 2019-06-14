@@ -9,7 +9,8 @@ public class WindEffect : MonoBehaviour
     public GameObject[] Players;
     private void Update() {
         foreach (var Player in Players) {
-            Player.GetComponent<Rigidbody2D>().AddForce(WindDir.normalized * WindForce * Time.deltaTime, ForceMode2D.Force);
+            if (Player != null)
+                Player.GetComponent<Rigidbody2D>().AddForce(WindDir.normalized * WindForce * Time.deltaTime, ForceMode2D.Force);
         }
     }
 }

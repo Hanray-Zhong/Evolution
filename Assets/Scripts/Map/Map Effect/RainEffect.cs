@@ -8,7 +8,8 @@ public class RainEffect : MonoBehaviour
     public GameObject[] Players;
     private void Update() {
         foreach (var Player in Players) {
-            Player.GetComponent<PlayerController_>().Drag = DragInRain;
+            if (Player != null)
+                Player.GetComponent<PlayerController_>().Drag = DragInRain;
         }
     }
 }
