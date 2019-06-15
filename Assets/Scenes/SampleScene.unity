@@ -570,8 +570,9 @@ GameObject:
   - component: {fileID: 496159125}
   - component: {fileID: 496159124}
   - component: {fileID: 496159123}
+  - component: {fileID: 496159130}
   m_Layer: 0
-  m_Name: Player (1)
+  m_Name: Assassin
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -589,8 +590,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23e058d6d78aa5943a938ce01c0f0c59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SelfTeam: 0
   Health: 100
   Weight: 1
+  DamageValue: 0
   IsDead: 0
   DeadEffect: {fileID: 1615402597081308, guid: 411d0994b6e6216409a7c27f8d577959, type: 3}
 --- !u!114 &496159124
@@ -623,7 +626,7 @@ MonoBehaviour:
   DirectionArrow: {fileID: 863865985}
   Impulse_force: 10
   Drag: 7
-  ImpluseCoefficient: 1.3
+  ImpulseCoefficient: 1
 --- !u!58 &496159126
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -724,6 +727,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 18.203001}
+--- !u!114 &496159130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496159122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51a83ad32804d234088c93b3198d9c3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &515464570
 GameObject:
   m_ObjectHideFlags: 0
@@ -868,8 +883,9 @@ GameObject:
   - component: {fileID: 715871248}
   - component: {fileID: 715871253}
   - component: {fileID: 715871254}
+  - component: {fileID: 715871255}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Warrior
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -893,7 +909,7 @@ MonoBehaviour:
   DirectionArrow: {fileID: 435420}
   Impulse_force: 10
   Drag: 7
-  ImpluseCoefficient: 1.3
+  ImpulseCoefficient: 1
 --- !u!212 &715871249
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1018,10 +1034,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23e058d6d78aa5943a938ce01c0f0c59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 100
+  SelfTeam: 0
+  Health: 160
   Weight: 1
+  DamageValue: 0
   IsDead: 0
   DeadEffect: {fileID: 1615402597081308, guid: 411d0994b6e6216409a7c27f8d577959, type: 3}
+--- !u!114 &715871255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715871247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51a83ad32804d234088c93b3198d9c3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &727877163
 GameObject:
   m_ObjectHideFlags: 0
@@ -1673,8 +1703,9 @@ GameObject:
   - component: {fileID: 1254731625}
   - component: {fileID: 1254731624}
   - component: {fileID: 1254731623}
+  - component: {fileID: 1254731630}
   m_Layer: 0
-  m_Name: Player (2)
+  m_Name: Priest
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1692,8 +1723,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23e058d6d78aa5943a938ce01c0f0c59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SelfTeam: 0
   Health: 100
   Weight: 1
+  DamageValue: 0
   IsDead: 0
   DeadEffect: {fileID: 1615402597081308, guid: 411d0994b6e6216409a7c27f8d577959, type: 3}
 --- !u!114 &1254731624
@@ -1726,7 +1759,7 @@ MonoBehaviour:
   DirectionArrow: {fileID: 1848191359}
   Impulse_force: 10
   Drag: 7
-  ImpluseCoefficient: 1.3
+  ImpulseCoefficient: 1
 --- !u!58 &1254731626
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1827,6 +1860,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 18.203001}
+--- !u!114 &1254731630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254731622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51a83ad32804d234088c93b3198d9c3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1305448926
 GameObject:
   m_ObjectHideFlags: 0
