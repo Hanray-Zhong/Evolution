@@ -45,7 +45,6 @@ public class PlayerController_ : MonoBehaviour {
 		else if (impulseOffset < 0 && !ImpulseEnd) {
 			this.gameObject.GetComponent<Rigidbody2D>().AddForce(MoveDir * Impulse_force, ForceMode2D.Impulse);
 			Impulse_force = 0;
-			Debug.Log("get");
 			ImpulseEnd = true;
 		}
 		else if (impulse == 0) {

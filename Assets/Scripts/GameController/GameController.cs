@@ -37,7 +37,7 @@ public class GameController : MonoBehaviour
     }
 
     IEnumerator ChangePlayer() {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0);
         currentPlayer.GetComponent<PlayerController_>().IsControlled = false;
         currentPlayerID++;
         if (currentPlayerID == Players.Length) {
