@@ -12,7 +12,7 @@ public class PlayerUnit : MonoBehaviour
     [Header("properties")]
     public float MaxHealth;
     public float Health;
-    public float Weight = 1;
+    // public float Weight = 1;
     public float DamageValue;
     [Header("Death")]
     public bool IsDead = false;

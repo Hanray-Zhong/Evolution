@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     public GameObject[] Players;
-    private GameObject currentPlayer;
+    public GameObject currentPlayer;
     private int currentPlayerID;
     private bool UseCoroutine = false;
 
@@ -34,18 +34,28 @@ public class GameController : MonoBehaviour
         currentPlayer = Players[currentPlayerID];
         currentPlayer.GetComponent<PlayerController_>().IsControlled = true;
         currentPlayer.GetComponent<PlayerController_>().ImpulseEnd = false;
+        currentPlayer.GetComponent<PlayerController_>().Impulse_force = 50;
     }
 
     IEnumerator ChangePlayer() {
         yield return new WaitForSeconds(0);
         currentPlayer.GetComponent<PlayerController_>().IsControlled = false;
-        currentPlayerID++;
-        if (currentPlayerID == Players.Length) {
-            currentPlayerID = 0;
-        }
-        currentPlayer = Players[currentPlayerID];
+        int protect = 0;
+        do {
+            protect++;
+            if (protect > 100) {
+                Debug.Log("Loop Error");
+                break;
+            }
+            currentPlayerID++;
+            if (currentPlayerID == Players.Length) {
+                currentPlayerID = 0;
+            }
+            currentPlayer = Players[currentPlayerID]; 
+        } while (currentPlayer == null);
         currentPlayer.GetComponent<PlayerController_>().ImpulseEnd = false;
         currentPlayer.GetComponent<PlayerController_>().IsControlled = true;
+        currentPlayer.GetComponent<PlayerController_>().Impulse_force = 50;
         UseCoroutine = false;
     }
 }

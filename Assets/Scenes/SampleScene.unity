@@ -221,7 +221,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u6218\u58EB1"
+  m_Text: "\u76FE\u624B"
 --- !u!222 &6906896
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -281,7 +281,6 @@ MonoBehaviour:
   SelfTeam: 1
   MaxHealth: 120
   Health: 0
-  Weight: 1
   DamageValue: 0
   IsDead: 0
   DeadEffect: {fileID: 1615402597081308, guid: 411d0994b6e6216409a7c27f8d577959, type: 3}
@@ -297,6 +296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c15593dae4e4c542a83fe6c8048be2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MainCamera: {fileID: 667996735}
 --- !u!114 &19212403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,11 +313,10 @@ MonoBehaviour:
   ImpulseEnd: 1
   gameInput: {fileID: 19212408}
   DirectionArrow: {fileID: 2101225170}
-  Impulse_force: 10
-  MAX_Speed: 30
-  Drag: 7
+  Impulse_force: 0
+  MAX_Speed: 48
+  Drag: 50
   Impulse: {fileID: 19212400}
-  ImpulseCoefficient: 1
 --- !u!58 &19212404
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -327,13 +326,13 @@ CircleCollider2D:
   m_GameObject: {fileID: 19212399}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: a1eac7cd1257106488811d8bb8d12071, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.09307536
 --- !u!50 &19212405
 Rigidbody2D:
   serializedVersion: 4
@@ -346,14 +345,14 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 7
+  m_Mass: 6
+  m_LinearDrag: 6
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!212 &19212406
 SpriteRenderer:
@@ -412,7 +411,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 19212399}
   m_LocalRotation: {x: -0, y: -0, z: 0.15818395, w: 0.9874097}
-  m_LocalPosition: {x: 6.58, y: 1.22, z: -9.895684}
+  m_LocalPosition: {x: 5.68, y: 3.22, z: -9.895684}
   m_LocalScale: {x: 4.629937, y: 4.629937, z: 4.629937}
   m_Children:
   - {fileID: 2101225171}
@@ -819,7 +818,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u7267\u5E082"
+  m_Text: "\u7267\u5E08"
 --- !u!222 &92862602
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1137,7 +1136,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u523A\u5BA22"
+  m_Text: "\u6218\u58EB"
 --- !u!222 &321114212
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1277,7 +1276,6 @@ MonoBehaviour:
   SelfTeam: 1
   MaxHealth: 160
   Health: 0
-  Weight: 2
   DamageValue: 0
   IsDead: 0
   DeadEffect: {fileID: 1615402597081308, guid: 411d0994b6e6216409a7c27f8d577959, type: 3}
@@ -1293,6 +1291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c15593dae4e4c542a83fe6c8048be2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MainCamera: {fileID: 667996735}
 --- !u!114 &487886958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1309,11 +1308,10 @@ MonoBehaviour:
   ImpulseEnd: 1
   gameInput: {fileID: 487886963}
   DirectionArrow: {fileID: 1692646993}
-  Impulse_force: 10
+  Impulse_force: 0
   MAX_Speed: 30
-  Drag: 7
+  Drag: 50
   Impulse: {fileID: 487886955}
-  ImpulseCoefficient: 1.5
 --- !u!58 &487886959
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1323,13 +1321,13 @@ CircleCollider2D:
   m_GameObject: {fileID: 487886954}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: a1eac7cd1257106488811d8bb8d12071, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.09307536
 --- !u!50 &487886960
 Rigidbody2D:
   serializedVersion: 4
@@ -1342,14 +1340,14 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 7
+  m_Mass: 10
+  m_LinearDrag: 10
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!212 &487886961
 SpriteRenderer:
@@ -1408,7 +1406,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 487886954}
   m_LocalRotation: {x: -0, y: -0, z: 0.15818395, w: 0.9874097}
-  m_LocalPosition: {x: 6.28, y: 2.87, z: -9.895684}
+  m_LocalPosition: {x: 3.3, y: 3.4, z: -9.895684}
   m_LocalScale: {x: 4.629937, y: 4.629937, z: 4.629937}
   m_Children:
   - {fileID: 1692646994}
@@ -1466,7 +1464,6 @@ MonoBehaviour:
   SelfTeam: 0
   MaxHealth: 100
   Health: 0
-  Weight: 1
   DamageValue: 20
   IsDead: 0
   DeadEffect: {fileID: 1615402597081308, guid: 411d0994b6e6216409a7c27f8d577959, type: 3}
@@ -1482,6 +1479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c15593dae4e4c542a83fe6c8048be2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MainCamera: {fileID: 667996735}
 --- !u!114 &496159125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1498,11 +1496,10 @@ MonoBehaviour:
   ImpulseEnd: 1
   gameInput: {fileID: 496159131}
   DirectionArrow: {fileID: 863865985}
-  Impulse_force: 10
-  MAX_Speed: 30
-  Drag: 7
+  Impulse_force: 0
+  MAX_Speed: 42
+  Drag: 50
   Impulse: {fileID: 496159130}
-  ImpulseCoefficient: 1
 --- !u!58 &496159126
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1512,13 +1509,13 @@ CircleCollider2D:
   m_GameObject: {fileID: 496159122}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: a1eac7cd1257106488811d8bb8d12071, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.09307536
 --- !u!50 &496159127
 Rigidbody2D:
   serializedVersion: 4
@@ -1531,14 +1528,14 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 7
   m_LinearDrag: 7
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!212 &496159128
 SpriteRenderer:
@@ -1664,6 +1661,7 @@ MonoBehaviour:
   - {fileID: 995463665}
   - {fileID: 1254731622}
   - {fileID: 19212399}
+  currentPlayer: {fileID: 0}
 --- !u!4 &515464572
 Transform:
   m_ObjectHideFlags: 0
@@ -1801,11 +1799,10 @@ MonoBehaviour:
   ImpulseEnd: 1
   gameInput: {fileID: 715871256}
   DirectionArrow: {fileID: 435420}
-  Impulse_force: 10
+  Impulse_force: 0
   MAX_Speed: 30
-  Drag: 7
+  Drag: 50
   Impulse: {fileID: 715871255}
-  ImpulseCoefficient: 1.5
 --- !u!212 &715871249
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1863,7 +1860,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 715871247}
   m_LocalRotation: {x: -0, y: -0, z: 0.15818395, w: 0.9874097}
-  m_LocalPosition: {x: -5.34, y: 3.59, z: -9.895684}
+  m_LocalPosition: {x: -4.68, y: 3.3, z: -9.895684}
   m_LocalScale: {x: 4.629937, y: 4.629937, z: 4.629937}
   m_Children:
   - {fileID: 435421}
@@ -1882,14 +1879,14 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 7
+  m_Mass: 10
+  m_LinearDrag: 10
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!58 &715871252
 CircleCollider2D:
@@ -1900,13 +1897,13 @@ CircleCollider2D:
   m_GameObject: {fileID: 715871247}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: a1eac7cd1257106488811d8bb8d12071, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.000000024458979, y: 0.0000000080431235}
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.09307536
 --- !u!114 &715871253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1919,6 +1916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c15593dae4e4c542a83fe6c8048be2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MainCamera: {fileID: 667996735}
 --- !u!114 &715871254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1934,7 +1932,6 @@ MonoBehaviour:
   SelfTeam: 0
   MaxHealth: 160
   Health: 0
-  Weight: 2
   DamageValue: 0
   IsDead: 0
   DeadEffect: {fileID: 1615402597081308, guid: 411d0994b6e6216409a7c27f8d577959, type: 3}
@@ -2445,7 +2442,6 @@ MonoBehaviour:
   SelfTeam: 1
   MaxHealth: 100
   Health: 0
-  Weight: 1
   DamageValue: 20
   IsDead: 0
   DeadEffect: {fileID: 1615402597081308, guid: 411d0994b6e6216409a7c27f8d577959, type: 3}
@@ -2461,6 +2457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c15593dae4e4c542a83fe6c8048be2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MainCamera: {fileID: 667996735}
 --- !u!114 &995463669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2477,11 +2474,10 @@ MonoBehaviour:
   ImpulseEnd: 1
   gameInput: {fileID: 995463674}
   DirectionArrow: {fileID: 1654072563}
-  Impulse_force: 10
-  MAX_Speed: 30
-  Drag: 7
+  Impulse_force: 0
+  MAX_Speed: 42
+  Drag: 50
   Impulse: {fileID: 995463666}
-  ImpulseCoefficient: 1
 --- !u!58 &995463670
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2491,13 +2487,13 @@ CircleCollider2D:
   m_GameObject: {fileID: 995463665}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: a1eac7cd1257106488811d8bb8d12071, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.09307536
 --- !u!50 &995463671
 Rigidbody2D:
   serializedVersion: 4
@@ -2510,14 +2506,14 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 7
   m_LinearDrag: 7
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!212 &995463672
 SpriteRenderer:
@@ -2724,7 +2720,6 @@ MonoBehaviour:
   SelfTeam: 0
   MaxHealth: 120
   Health: 0
-  Weight: 1
   DamageValue: 0
   IsDead: 0
   DeadEffect: {fileID: 1615402597081308, guid: 411d0994b6e6216409a7c27f8d577959, type: 3}
@@ -2740,6 +2735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c15593dae4e4c542a83fe6c8048be2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MainCamera: {fileID: 667996735}
 --- !u!114 &1254731625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2756,11 +2752,10 @@ MonoBehaviour:
   ImpulseEnd: 1
   gameInput: {fileID: 1254731631}
   DirectionArrow: {fileID: 1848191359}
-  Impulse_force: 10
-  MAX_Speed: 30
-  Drag: 7
+  Impulse_force: 0
+  MAX_Speed: 48
+  Drag: 50
   Impulse: {fileID: 1254731630}
-  ImpulseCoefficient: 1
 --- !u!58 &1254731626
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2770,13 +2765,13 @@ CircleCollider2D:
   m_GameObject: {fileID: 1254731622}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: a1eac7cd1257106488811d8bb8d12071, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.09307536
 --- !u!50 &1254731627
 Rigidbody2D:
   serializedVersion: 4
@@ -2789,14 +2784,14 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 7
+  m_Mass: 6
+  m_LinearDrag: 6
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!212 &1254731628
 SpriteRenderer:
@@ -3226,7 +3221,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u7267\u5E081"
+  m_Text: "\u7267\u5E08"
 --- !u!222 &1350354931
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3305,7 +3300,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u6218\u58EB2"
+  m_Text: "\u76FE\u624B"
 --- !u!222 &1579507319
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3446,7 +3441,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u523A\u5BA21"
+  m_Text: "\u6218\u58EB"
 --- !u!222 &1715085428
 CanvasRenderer:
   m_ObjectHideFlags: 0

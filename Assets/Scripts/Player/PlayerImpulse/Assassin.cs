@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class Assassin : Impulse
 {
-	public override void ImpulseInteraction(GameObject other, Vector2 Dir, float velocity) {
+	public override void ImpulseInteraction(GameObject other) {
 		PlayerUnit other_unit = other.GetComponent<PlayerUnit>();
 		PlayerUnit self_unit = gameObject.GetComponent<PlayerUnit>();
 		if (other_unit == null) {
 			Debug.Log("PlayerUnit is NULL");
 			return;
 		}
-		float ImpulseCoefficient = gameObject.GetComponent<PlayerController_>().ImpulseCoefficient;
-		other.gameObject.GetComponent<Rigidbody2D>().AddForce(Dir.normalized * velocity * ImpulseCoefficient / other_unit.Weight, ForceMode2D.Impulse);
-		this.gameObject.GetComponent<Rigidbody2D>().drag = 30;
+		// float weight = gameObject.GetComponent<PlayerUnit>().Weight;
+		// other.gameObject.GetComponent<Rigidbody2D>().velocity = Dir.normalized * velocity * weight / other_unit.Weight;
+		// this.gameObject.GetComponent<Rigidbody2D>().drag = 30;
         if (self_unit.SelfTeam != other_unit.SelfTeam)
 			other_unit.Damage(self_unit.DamageValue + other_unit.MaxHealth * 0.1f);
         else
             return;
 	}
+
 }
