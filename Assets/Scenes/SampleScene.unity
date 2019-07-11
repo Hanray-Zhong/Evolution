@@ -1494,7 +1494,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsControlled: 0
   ImpulseEnd: 1
-  gameInput: {fileID: 496159131}
+  gameInput: {fileID: 496159124}
   DirectionArrow: {fileID: 863865985}
   Impulse_force: 0
   MAX_Speed: 42
@@ -1797,7 +1797,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsControlled: 0
   ImpulseEnd: 1
-  gameInput: {fileID: 715871256}
+  gameInput: {fileID: 715871253}
   DirectionArrow: {fileID: 435420}
   Impulse_force: 0
   MAX_Speed: 30
@@ -2750,7 +2750,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsControlled: 0
   ImpulseEnd: 1
-  gameInput: {fileID: 1254731631}
+  gameInput: {fileID: 1254731624}
   DirectionArrow: {fileID: 1848191359}
   Impulse_force: 0
   MAX_Speed: 48

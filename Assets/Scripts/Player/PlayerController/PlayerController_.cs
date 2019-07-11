@@ -47,16 +47,14 @@ public class PlayerController_ : MonoBehaviour {
 		if (ImpulseEnd) {
 			return;
 		}
-		if (impulse_Change > 0 && Impulse_force <= 100) {
-			Impulse_force += 2;
-		}
-		else if (impulse_Change < 0 && Impulse_force >= 0) {
-			Impulse_force -= 2;
+		if (Impulse_force <= 100 && Impulse_force >= 0) {
+			Debug.Log(impulse_Change);
+			Impulse_force += 2 * impulse_Change;
 		}
 		if (Impulse_force > 100) {
 			Impulse_force = 100;
 		}
-		else if (Impulse_force < 0) {
+		if (Impulse_force < 0) {
 			Impulse_force = 0;
 		}
 		if (impulse == 1 && !ImpulseEnd) {

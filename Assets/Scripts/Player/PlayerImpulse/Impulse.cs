@@ -4,5 +4,6 @@ using UnityEngine;
 
 public abstract class Impulse : MonoBehaviour
 {
+    
     public abstract void ImpulseInteraction(GameObject other);
 }
