@@ -11,6 +11,7 @@ public class PlayerController_ : MonoBehaviour {
 	public bool IsControlled = false;
 	public bool ImpulseEnd = true;
 	public GameInput gameInput;
+	public GameController gameController;
 	[Header("Move")]
 	public GameObject DirectionArrow;
 	public float Impulse_force;
@@ -48,7 +49,6 @@ public class PlayerController_ : MonoBehaviour {
 			return;
 		}
 		if (Impulse_force <= 100 && Impulse_force >= 0) {
-			Debug.Log(impulse_Change);
 			Impulse_force += 2 * impulse_Change;
 		}
 		if (Impulse_force > 100) {
@@ -62,6 +62,7 @@ public class PlayerController_ : MonoBehaviour {
 			this.gameObject.GetComponent<Rigidbody2D>().velocity = MoveDir * (Impulse_force / 100) * MAX_Speed;
 			Impulse_force = 0;
 			ImpulseEnd = true;
+			gameController.ImpulseEnd = ImpulseEnd;
 		}
 	}
 	void VisibleIsControlled() {

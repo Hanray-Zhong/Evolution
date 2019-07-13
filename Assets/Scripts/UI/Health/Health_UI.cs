@@ -9,6 +9,7 @@ public class Health_UI : MonoBehaviour
     public GameObject MainCamera;
     private void Update() {
         if (Player == null) {
+            gameObject.SetActive(false);
             return;
         }
         // 血条跟随
