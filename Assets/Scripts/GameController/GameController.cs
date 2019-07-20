@@ -7,23 +7,27 @@ public class GameController : MonoBehaviour
     public GameObject MainCamera;
     public GameObject[] Players;
     public GameObject currentPlayer;
+    public MapEffect MapEffect;
     private int currentPlayerID;
     private bool UseCoroutine = false;
     [Header("Current Player Status")]
     public bool IsControlled;
     public bool ImpulseEnd;
     [Header("Player Turn")]
+    public int CurrentRound;
+    public int CurrentHalfRound;
     public int CurrentTurn = 1;
-    // public int Team1_first;
-    // public int Team2_first;
-    // public  bool Turn_Start;
-    // public  bool Turn_End;
+
     
     private void Start() {
         Init();
     }
 
     private void Update() {
+        // CurrentRound = (CurrentTurn - 1) / Players.Length + 1;
+        // CurrentHalfRound = (CurrentTurn - 1) / (Players.Length / 2) + 1;
+        // MapEffect.InitPerRound();
+        // currentPlayer.GetComponent<PlayerUnit>().ReleaseControl();
         RoundController();
     }
 
@@ -36,21 +40,18 @@ public class GameController : MonoBehaviour
                 return;
             }
         }
-        if (IsControlled && ImpulseEnd && !UseCoroutine) {
+        if ((IsControlled && ImpulseEnd && !UseCoroutine) || currentPlayer.GetComponent<PlayerUnit>().IsDead) {
             UseCoroutine = true;
-            StartCoroutine(ChangePlayer());
+            StartCoroutine(SwitchRound());
         }
     }
 
     void Init() {
+        CurrentRound = CurrentTurn / Players.Length + 1;
+        CurrentHalfRound = CurrentTurn / (Players.Length / 2) + 1;
+
         currentPlayerID = 0;
         currentPlayer = Players[currentPlayerID];
-
-        // MainCamera.GetComponent<KanetoTools.CameraFollow>().player = currentPlayer.transform;
-        // MainCamera.GetComponent<KanetoTools.CameraFollow>().FollowMouse = false;
-        // MainCamera.GetComponent<KanetoTools.CameraFollow>().PlayerToMouse = true;
-        // MainCamera.GetComponent<KanetoTools.CameraFollow>().Margin = Vector2.zero;
-
         currentPlayer.GetComponent<PlayerController_>().IsControlled = true;
         currentPlayer.GetComponent<PlayerController_>().ImpulseEnd = false;
         currentPlayer.GetComponent<PlayerController_>().Impulse_force = 50;
@@ -59,12 +60,26 @@ public class GameController : MonoBehaviour
         ImpulseEnd = currentPlayer.GetComponent<PlayerController_>().ImpulseEnd;
     }
 
-    IEnumerator ChangePlayer() {
-        yield return new WaitForSeconds(1);
+    IEnumerator SwitchRound() {
+        yield return new WaitForSeconds(2);
+
+        // 回合控制以及回合开始时发生的效果
+        CurrentRound = CurrentTurn / Players.Length + 1;
+        CurrentHalfRound = CurrentTurn / (Players.Length / 2) + 1;
+        MapEffect.InitPerRound();
+        foreach (var palyer in Players) {
+            PlayerUnit u = palyer.GetComponent<PlayerUnit>();
+            if (u == null || !u.controlled) continue;
+            u.ReleaseControl();
+        }
+        
+        // 切换人物
         if (currentPlayer != null)
             currentPlayer.GetComponent<PlayerController_>().IsControlled = false;
         int protect = 0;
+        bool _continue;
         do {
+            _continue = false;
             protect++;
             if (protect > 7) {
                 Debug.Log("Loop Error");
@@ -74,31 +89,20 @@ public class GameController : MonoBehaviour
             if (currentPlayerID == Players.Length) {
                 currentPlayerID = 0;
             }
-            // if (currentPlayerID == Team1_first) {
-            //     Turn_Start = true;
-            //     Turn_End = false;
-            // } 
-            // else if (currentPlayerID == Team2_first) {
-            //     Turn_Start = false;
-            //     Turn_Start = true;
-            // } 
-            // else {
-            //     Turn_Start = false;
-            //     Turn_End = false;
-            // }
             CurrentTurn++;
             currentPlayer = Players[currentPlayerID]; 
-        } while (currentPlayer == null);
-        // MainCamera.GetComponent<KanetoTools.CameraFollow>().player = currentPlayer.transform;
-        // MainCamera.GetComponent<KanetoTools.CameraFollow>().FollowMouse = false;
-        // MainCamera.GetComponent<KanetoTools.CameraFollow>().PlayerToMouse = true;
-        // MainCamera.GetComponent<KanetoTools.CameraFollow>().Margin = Vector2.zero;
+            if (currentPlayer.GetComponent<PlayerUnit>().controlled) {
+                _continue = true;
+            }
+        } while (currentPlayer.GetComponent<PlayerUnit>().IsDead == true || _continue);
 
         currentPlayer.GetComponent<PlayerController_>().ImpulseEnd = false;
         currentPlayer.GetComponent<PlayerController_>().IsControlled = true;
         currentPlayer.GetComponent<PlayerController_>().Impulse_force = 50;
         IsControlled = currentPlayer.GetComponent<PlayerController_>().IsControlled;
         ImpulseEnd = currentPlayer.GetComponent<PlayerController_>().ImpulseEnd;
+        
+        // 携程结束
         UseCoroutine = false;
     }
 }

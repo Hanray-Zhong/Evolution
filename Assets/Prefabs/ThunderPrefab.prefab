@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5704372783239880380}
   m_Layer: 0
   m_Name: ThunderPrefab
-  m_TagString: Untagged
+  m_TagString: Thunder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58,7 +58,6 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -94,7 +93,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36548c6de3f4a3e49ab609bd440e9ece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  radius: 0.9
+  objects: []
   gameController: {fileID: 0}
+  Start_round: 0
 --- !u!58 &5704372783239880380
 CircleCollider2D:
   m_ObjectHideFlags: 0

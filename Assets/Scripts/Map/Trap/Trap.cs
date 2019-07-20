@@ -8,6 +8,8 @@ public class Trap : MonoBehaviour
     public float Force;
     private void OnCollisionEnter2D(Collision2D other) {
         PlayerUnit u = other.gameObject.GetComponent<PlayerUnit>();
+        other.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        other.gameObject.GetComponent<Animator>().SetBool("Fall", true);
         if (u != null) {
             // Vector2 Dir = (other.gameObject.transform.position - gameObject.transform.position).normalized;
             // if (Mathf.Abs(Dir.x) > Mathf.Abs(Dir.y)) {
