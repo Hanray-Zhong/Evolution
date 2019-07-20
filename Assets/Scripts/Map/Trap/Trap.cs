@@ -6,7 +6,7 @@ public class Trap : MonoBehaviour
 {
     public float Damage;
     public float Force;
-    private void OnCollisionEnter2D(Collision2D other) {
+    private void OnTriggerEnter2D(Collider2D other) {
         PlayerUnit u = other.gameObject.GetComponent<PlayerUnit>();
         other.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         other.gameObject.GetComponent<Animator>().SetBool("Fall", true);

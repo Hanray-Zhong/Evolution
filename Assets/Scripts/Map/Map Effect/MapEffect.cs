@@ -13,10 +13,10 @@ public class MapEffect : MonoBehaviour
 
 
     public void InitPerRound() {
-        if (gameController.CurrentRound % 2 != 1) {
+        if (gameController.CurrentRound % 5 != 3) {
             ThunderOn = true;
         }
-        if (gameController.CurrentRound % 2 == 1 && ThunderOn) {
+        if (gameController.CurrentRound % 5 == 3 && ThunderOn) {
             Thunder();
         }
         DetermineThunder();

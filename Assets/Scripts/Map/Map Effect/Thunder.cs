@@ -29,7 +29,6 @@ public class Thunder : MonoBehaviour {
             Destroy(gameObject);
         }
         if (gameController.CurrentRound != Start_round && objects.Length == 0) {
-            Debug.Log("get");
             Destroy(gameObject);
         }
     }
