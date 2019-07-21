@@ -32,18 +32,18 @@ public class ItemGenerator : MonoBehaviour
         }
         
     } 
-    private void OnDrawGizmos() {
-        Gizmos.color = new Color(0.5f, 0.5f, 0.5f, 1);
-        foreach (var col in Colliders) {
-            Vector3 a = new Vector3(col.bounds.max.x - Edge.x, col.bounds.max.y - Edge.y, 0);
-            Vector3 b = new Vector3(col.bounds.max.x - Edge.x, col.bounds.min.y + Edge.y, 0);
-            Vector3 c = new Vector3(col.bounds.min.x + Edge.x, col.bounds.min.y + Edge.y, 0);
-            Vector3 d = new Vector3(col.bounds.min.x + Edge.x, col.bounds.max.y - Edge.y, 0);
+    // private void OnDrawGizmos() {
+    //     Gizmos.color = new Color(0.5f, 0.5f, 0.5f, 1);
+    //     foreach (var col in Colliders) {
+    //         Vector3 a = new Vector3(col.bounds.max.x - Edge.x, col.bounds.max.y - Edge.y, 0);
+    //         Vector3 b = new Vector3(col.bounds.max.x - Edge.x, col.bounds.min.y + Edge.y, 0);
+    //         Vector3 c = new Vector3(col.bounds.min.x + Edge.x, col.bounds.min.y + Edge.y, 0);
+    //         Vector3 d = new Vector3(col.bounds.min.x + Edge.x, col.bounds.max.y - Edge.y, 0);
 
-            Gizmos.DrawLine(a, b);
-            Gizmos.DrawLine(a, d);
-            Gizmos.DrawLine(c, b);
-            Gizmos.DrawLine(c, d);
-        }
-    }
+    //         Gizmos.DrawLine(a, b);
+    //         Gizmos.DrawLine(a, d);
+    //         Gizmos.DrawLine(c, b);
+    //         Gizmos.DrawLine(c, d);
+    //     }
+    // }
 }

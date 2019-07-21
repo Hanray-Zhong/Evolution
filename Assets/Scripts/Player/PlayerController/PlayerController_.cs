@@ -40,7 +40,7 @@ public class PlayerController_ : MonoBehaviour {
 	void StartMove () {
 		// this.gameObject.GetComponent<Rigidbody2D>().drag = Drag;
 		if (DirectionArrow != null) {
-			DirectionArrow.GetComponent<Transform>().localScale = new Vector3(Impulse_force / 100, Impulse_force / 100, Impulse_force / 100);
+			DirectionArrow.GetComponent<Transform>().localScale = new Vector3(50 * Impulse_force / 100, 50 * Impulse_force / 100, 50 * Impulse_force / 100);
 			gameObject.transform.up = MoveDir;
 		}
 	}
