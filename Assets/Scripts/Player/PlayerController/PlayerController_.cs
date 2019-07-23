@@ -16,7 +16,7 @@ public class PlayerController_ : MonoBehaviour {
 	public GameObject DirectionArrow;
 	public float Impulse_force;
 	public float MAX_Speed;
-	public float Drag;
+	// public float Drag;
 	[Header("Impulse")]
 	public Impulse Impulse;
 	// public float ImpulseCoefficient;
@@ -76,14 +76,14 @@ public class PlayerController_ : MonoBehaviour {
 	// 		gameObject.GetComponent<SpriteRenderer>().color = color_ready;
 	// 	}
 	// }
-	void MyDrag() {
-		if (gameObject.GetComponent<Rigidbody2D>().velocity.magnitude > 0.5f) {
-			gameObject.GetComponent<Rigidbody2D>().velocity -= gameObject.GetComponent<Rigidbody2D>().velocity.normalized * Drag * Time.deltaTime;
-		}
-		else {
-			gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-		}
-	}
+	// void MyDrag() {
+	// 	if (gameObject.GetComponent<Rigidbody2D>().velocity.magnitude > 0.5f) {
+	// 		gameObject.GetComponent<Rigidbody2D>().velocity -= gameObject.GetComponent<Rigidbody2D>().velocity.normalized * Drag * Time.deltaTime;
+	// 	}
+	// 	else {
+	// 		gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+	// 	}
+	// }
 
 	// 物理引擎
 	private void OnCollisionEnter2D(Collision2D other) {
