@@ -26,7 +26,7 @@ public class PlayerController_ : MonoBehaviour {
 		StartMove();
 		StartImpulse();
 		// MyDrag();
-		VisibleIsControlled();
+		// VisibleIsControlled();
 	}
 	void InputConfiguration () {
 		if (gameInput == null || ImpulseEnd) {
@@ -65,17 +65,17 @@ public class PlayerController_ : MonoBehaviour {
 			gameController.ImpulseEnd = ImpulseEnd;
 		}
 	}
-	void VisibleIsControlled() {
-		if (IsControlled) {
-			Color color_in_cd = new Color(0, 0, 0, 1f);
-			gameObject.GetComponent<SpriteRenderer>().color = color_in_cd;
-			return;
-		}
-		else {
-			Color color_ready = new Color(0, 0, 0, 0.5f);
-			gameObject.GetComponent<SpriteRenderer>().color = color_ready;
-		}
-	}
+	// void VisibleIsControlled() {
+	// 	if (IsControlled) {
+	// 		Color color_in_cd = new Color(0, 0, 0, 1f);
+	// 		gameObject.GetComponent<SpriteRenderer>().color = color_in_cd;
+	// 		return;
+	// 	}
+	// 	else {
+	// 		Color color_ready = new Color(0, 0, 0, 0.5f);
+	// 		gameObject.GetComponent<SpriteRenderer>().color = color_ready;
+	// 	}
+	// }
 	void MyDrag() {
 		if (gameObject.GetComponent<Rigidbody2D>().velocity.magnitude > 0.5f) {
 			gameObject.GetComponent<Rigidbody2D>().velocity -= gameObject.GetComponent<Rigidbody2D>().velocity.normalized * Drag * Time.deltaTime;

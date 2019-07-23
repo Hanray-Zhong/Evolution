@@ -15,8 +15,8 @@ TagManager:
   - 
   - 
   - Player
-  - 
-  - 
+  - PlayerCollider
+  - Trap
   - 
   - 
   - 
