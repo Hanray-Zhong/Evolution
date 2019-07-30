@@ -5,6 +5,8 @@ public class Thunder : MonoBehaviour {
     public float radius;
     public Collider2D[] objects;
     public GameController gameController;
+    public Animator ThunderAnimation;
+    public Animator ThunderWarning;
     public int Start_round;
 
     private void Awake() {
@@ -18,6 +20,8 @@ public class Thunder : MonoBehaviour {
     public void CheakTrigger() {
         objects = Physics2D.OverlapCircleAll(transform.position, radius, 1 << LayerMask.NameToLayer("Player"));
         if (gameController.CurrentRound != Start_round) {
+            ThunderAnimation.SetBool("ThunderDetermine", true);
+            ThunderWarning.Play("Warning");
             foreach (var obj in objects) {
                 PlayerUnit u = obj.gameObject.GetComponent<PlayerUnit>();
                 if (u == null)
@@ -26,10 +30,7 @@ public class Thunder : MonoBehaviour {
                 u.controlled = true;
                 u.SetControl(1);
             }
-            Destroy(gameObject);
-        }
-        if (gameController.CurrentRound != Start_round && objects.Length == 0) {
-            Destroy(gameObject);
+            Destroy(gameObject, 1.2f);
         }
     }
     private void OnDrawGizmosSelected() {

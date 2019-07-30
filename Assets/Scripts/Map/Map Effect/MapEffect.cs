@@ -10,6 +10,8 @@ public class MapEffect : MonoBehaviour
     public bool ThunderOn;
     public GameObject ThunderPrefab;
     public GameObject[] ThunderObjs;
+    [Header("Rain")]
+    public bool RainOn;
 
 
     public void InitPerRound() {

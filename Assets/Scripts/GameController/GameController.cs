@@ -8,6 +8,8 @@ public class GameController : MonoBehaviour
     public GameObject[] Players;
     public GameObject currentPlayer;
     public MapEffect MapEffect;
+    public Animator NextTurnAnimation;
+    private AnimatorStateInfo AniInfo;
     private int currentPlayerID;
     private bool UseCoroutine = false;
     [Header("Current Player Status")]
@@ -20,6 +22,7 @@ public class GameController : MonoBehaviour
 
     
     private void Start() {
+        AniInfo = NextTurnAnimation.GetCurrentAnimatorStateInfo(0);
         Init();
     }
 
@@ -62,6 +65,11 @@ public class GameController : MonoBehaviour
         currentPlayerID++;
         if (currentPlayerID == Players.Length) {
             currentPlayerID = 0;
+        }
+        // 切换回合动画
+        if (currentPlayerID == 0) {
+            NextTurnAnimation.Play("NextTurn");
+            yield return new WaitForSeconds(1);
         }
 
         // 回合控制以及回合开始时发生的效果

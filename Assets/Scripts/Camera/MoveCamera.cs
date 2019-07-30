@@ -24,7 +24,13 @@ public class MoveCamera : MonoBehaviour
         MousePosition = new Vector2(Mathf.Clamp(Input.mousePosition.x, 0, Screen.width), Mathf.Clamp(Input.mousePosition.y, 0, Screen.height)) - new Vector2(Screen.width / 2, Screen.height / 2);
         relativePos = MousePosition * ((edgeWidth - cameraWidth) / Screen.width);
         // Debug.Log(cameraWidth);
-        gameObject.transform.SetPositionAndRotation(new Vector3(relativePos.x, relativePos.y, gameObject.transform.position.z), Quaternion.identity);
+        // gameObject.transform.SetPositionAndRotation(new Vector3(relativePos.x, relativePos.y, gameObject.transform.position.z), Quaternion.identity);
+        // 平滑移动
+        var x = transform.position.x;
+        var y = transform.position.y;
+        x = Mathf.Lerp(x, relativePos.x, Time.deltaTime);
+        y = Mathf.Lerp(y, relativePos.y, Time.deltaTime);
+        transform.position = new Vector3(x, y, transform.position.z);//改变相机的位置
     }
 
 
@@ -47,6 +53,5 @@ public class MoveCamera : MonoBehaviour
         Gizmos.DrawLine(a, d);
         Gizmos.DrawLine(c, b);
         Gizmos.DrawLine(c, d);
-        
     }
 }
