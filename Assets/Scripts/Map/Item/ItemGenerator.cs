@@ -5,7 +5,6 @@ using UnityEngine;
 public class ItemGenerator : MonoBehaviour
 {
     public BoxCollider2D[] Colliders;
-    public Vector2[] Positions;
     public Vector2 Margin;
     public Vector2 Edge;
 
@@ -14,6 +13,22 @@ public class ItemGenerator : MonoBehaviour
             int index = Random.Range(0, Colliders.Length);
             Vector2 Pos = new Vector2(Random.Range(Colliders[index].bounds.min.x + Margin.x, Colliders[index].bounds.max.x - Margin.x), Random.Range(Colliders[index].bounds.min.y + Margin.y, Colliders[index].bounds.max.y - Margin.y));
             Instantiate(obj, Pos, Quaternion.identity);
+        }
+    }
+    public void GenerateOnPointsWithoutPlayer(GameObject obj) {
+        List<BoxCollider2D> cols = new List<BoxCollider2D>();
+        foreach (var col in Colliders) {
+            cols.Add(col);
+        }
+        for (int i = 0; i < Colliders.Length; i++) {
+            int index = Random.Range(0, cols.ToArray().Length);
+            if (cols.ToArray()[index].IsTouchingLayers(1 << LayerMask.NameToLayer("Player"))) {
+                cols.RemoveAt(index);
+                continue;
+            }
+            Vector2 Pos = new Vector2(Random.Range(Colliders[index].bounds.min.x + Margin.x, Colliders[index].bounds.max.x - Margin.x), Random.Range(Colliders[index].bounds.min.y + Margin.y, Colliders[index].bounds.max.y - Margin.y));
+            Instantiate(obj, Pos, Quaternion.identity);
+            break;
         }
     }
 

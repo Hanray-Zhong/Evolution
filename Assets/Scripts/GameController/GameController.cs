@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+    [Header("Camera")]
     public GameObject MainCamera;
+    [Header("Players")]
     public GameObject[] Players;
     public GameObject currentPlayer;
+    [Header("Map Source")]
     public MapEffect MapEffect;
+    public ItemController ItemController;
+    [Header("Next Turn Animation")]
     public Animator NextTurnAnimation;
     private AnimatorStateInfo AniInfo;
     private int currentPlayerID;
@@ -69,15 +74,19 @@ public class GameController : MonoBehaviour
         // 切换回合动画
         if (currentPlayerID == 0) {
             NextTurnAnimation.Play("NextTurn");
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(1.5f);
         }
 
-        // 回合控制以及回合开始时发生的效果
+        // 回合控制（每次优先计算回合数）
         if (currentPlayerID == Players.Length / 2 || currentPlayerID == 0)
             CurrentHalfRound++;
         if (currentPlayerID == 0)
             CurrentRound++;
+
+        // 回合开始时发生的效果
         MapEffect.InitPerRound();
+        ItemController.InitPerRound();
+
         foreach (var palyer in Players) {
             PlayerUnit u = palyer.GetComponent<PlayerUnit>();
             if (u != null && u.IsDead) 

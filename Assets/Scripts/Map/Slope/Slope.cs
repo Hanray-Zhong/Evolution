@@ -18,7 +18,9 @@ public class Slope : MonoBehaviour
             return;
         }
         // Debug.Log("get");
-        rigidbody2D.AddForce(SlopeDir * rigidbody2D.mass * 9.8f * Mathf.Sin(KanetoTools.Arithmetic.AngleToRadian(45)), ForceMode2D.Force);
+        // Debug.Log(rigidbody2D.velocity.magnitude);
+        if (rigidbody2D.velocity.magnitude > 0.8f)
+            rigidbody2D.AddForce(SlopeDir * rigidbody2D.mass * 9.8f * Mathf.Sin(KanetoTools.Arithmetic.AngleToRadian(45)), ForceMode2D.Force);
     }
     private void OnDrawGizmosSelected() {
         Gizmos.color = new Color(1, 0, 0, 1);
