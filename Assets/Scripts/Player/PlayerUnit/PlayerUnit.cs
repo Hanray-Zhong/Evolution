@@ -9,6 +9,7 @@ public enum Team {
 public class PlayerUnit : MonoBehaviour
 {   
     public GameController gameController;
+    public ScoreController scoreController;
     public Animator animator;
     public Team SelfTeam;
     [Header("properties")]
@@ -56,6 +57,12 @@ public class PlayerUnit : MonoBehaviour
         if (gameObject.GetComponent<PlayerUnit>().Health <= 0) {
             this.DeathRound = gameController.CurrentRound;
             IsDead = true;
+            if (SelfTeam == Team.Team_1) {
+                scoreController.Team2_Score += 2;
+            }
+            else {
+                scoreController.Team1_Score += 2;
+            }
             // animator.Play("Death");
         }
         if (Health > MaxHealth) {
