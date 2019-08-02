@@ -20,6 +20,7 @@ public class Coin : MonoBehaviour
                     scoreController.Team1_Score += 4;
                 }
             }
+            Destroy(gameObject);
         }
     }
 }

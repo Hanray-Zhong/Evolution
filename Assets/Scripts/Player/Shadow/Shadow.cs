@@ -11,5 +11,6 @@ public class Shadow : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().sprite = Target.GetComponent<SpriteRenderer>().sprite;
         gameObject.transform.position = Target.transform.position + (Vector3)Offset;
         gameObject.transform.rotation = Target.transform.rotation;
+        gameObject.transform.localScale = Target.transform.localScale;
     }
 }

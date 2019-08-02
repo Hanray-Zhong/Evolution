@@ -373,7 +373,7 @@ Transform:
   - {fileID: 1052060378}
   - {fileID: 421555646}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &86875856
 GameObject:
@@ -1462,11 +1462,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameController: {fileID: 515464571}
-  scoreController: {fileID: 0}
+  scoreController: {fileID: 1436594829}
   animator: {fileID: 487886964}
   SelfTeam: 1
   MaxHealth: 160
   Health: 0
+  Drag: 9
   DamageValue: 0
   IsDead: 0
   Death: 0
@@ -1601,7 +1602,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 487886954}
   m_LocalRotation: {x: -0, y: -0, z: 0.15818395, w: 0.9874097}
-  m_LocalPosition: {x: 9.18, y: 0.83, z: 0.041815758}
+  m_LocalPosition: {x: 9.48, y: 0.02, z: 0.041815758}
   m_LocalScale: {x: 0.0908957, y: 0.0908957, z: 0.09089568}
   m_Children:
   - {fileID: 1692646994}
@@ -1672,11 +1673,7 @@ MonoBehaviour:
   MainCamera: {fileID: 667996733}
   Players:
   - {fileID: 715871247}
-  - {fileID: 573220635}
-  - {fileID: 566155701}
   - {fileID: 487886954}
-  - {fileID: 1301334130}
-  - {fileID: 1052060368}
   currentPlayer: {fileID: 0}
   MapEffect: {fileID: 1305448928}
   ItemController: {fileID: 1501299972}
@@ -1698,7 +1695,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &558353092
 GameObject:
@@ -1819,11 +1816,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameController: {fileID: 515464571}
-  scoreController: {fileID: 0}
+  scoreController: {fileID: 1436594829}
   animator: {fileID: 566155708}
   SelfTeam: 0
   MaxHealth: 160
   Health: 0
+  Drag: 7
   DamageValue: 0
   IsDead: 0
   Death: 0
@@ -2047,11 +2045,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameController: {fileID: 515464571}
-  scoreController: {fileID: 0}
+  scoreController: {fileID: 1436594829}
   animator: {fileID: 573220642}
   SelfTeam: 0
   MaxHealth: 160
   Health: 0
+  Drag: 7
   DamageValue: 0
   IsDead: 0
   Death: 0
@@ -2217,7 +2216,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 573220635}
   m_LocalRotation: {x: -0, y: -0, z: 0.15818395, w: 0.9874097}
-  m_LocalPosition: {x: -11.473652, y: -0.29350758, z: 0.041815758}
+  m_LocalPosition: {x: -11.31, y: -0.59, z: 0.041815758}
   m_LocalScale: {x: 0.09089569, y: 0.09089569, z: 0.090895675}
   m_Children:
   - {fileID: 68799775}
@@ -2568,7 +2567,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 715871247}
   m_LocalRotation: {x: -0, y: -0, z: -0.01972101, w: 0.99980557}
-  m_LocalPosition: {x: -9.22, y: 0.31, z: 0.041815758}
+  m_LocalPosition: {x: -8.95, y: -0.36, z: 0.041815758}
   m_LocalScale: {x: 0.090895675, y: 0.090895675, z: 0.090895675}
   m_Children:
   - {fileID: 435421}
@@ -2639,11 +2638,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameController: {fileID: 515464571}
-  scoreController: {fileID: 0}
+  scoreController: {fileID: 1436594829}
   animator: {fileID: 715871257}
   SelfTeam: 0
   MaxHealth: 160
   Health: 0
+  Drag: 9
   DamageValue: 0
   IsDead: 0
   Death: 0
@@ -2905,6 +2905,57 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 2560, y: 1440}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &796769979
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 796769981}
+  - component: {fileID: 796769980}
+  m_Layer: 0
+  m_Name: Rain
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &796769980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796769979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31294bb35d3a8994a8e962792abc1e1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MapEffect: {fileID: 1305448928}
+  Players:
+  - {fileID: 715871247}
+  - {fileID: 573220635}
+  - {fileID: 566155701}
+  - {fileID: 487886954}
+  - {fileID: 1301334130}
+  - {fileID: 1052060368}
+--- !u!4 &796769981
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796769979}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1305448927}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &825134121
 GameObject:
   m_ObjectHideFlags: 0
@@ -3773,11 +3824,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameController: {fileID: 515464571}
-  scoreController: {fileID: 0}
+  scoreController: {fileID: 1436594829}
   animator: {fileID: 1052060375}
   SelfTeam: 1
   MaxHealth: 160
   Health: 0
+  Drag: 7
   DamageValue: 0
   IsDead: 0
   Death: 0
@@ -4141,7 +4193,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1167567417
 GameObject:
@@ -4435,11 +4487,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameController: {fileID: 515464571}
-  scoreController: {fileID: 0}
+  scoreController: {fileID: 1436594829}
   animator: {fileID: 1301334137}
   SelfTeam: 1
   MaxHealth: 160
   Health: 0
+  Drag: 7
   DamageValue: 0
   IsDead: 0
   Death: 0
@@ -4638,12 +4691,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1305448926}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.3902507, y: -1.3155056, z: 0}
-  m_LocalScale: {x: 1.4067297, y: 1.4202241, z: 2.2192287}
+  m_LocalPosition: {x: -2.868301, y: -1.5786068, z: -6.405191}
+  m_LocalScale: {x: 1.6880757, y: 1.7042689, z: 2.6630745}
   m_Children:
   - {fileID: 1929323954}
-  m_Father: {fileID: 1985443882}
-  m_RootOrder: 4
+  - {fileID: 796769981}
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1305448928
 MonoBehaviour:
@@ -4659,11 +4713,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameController: {fileID: 515464571}
   Generator: {fileID: 1929323955}
-  ThunderOn: 0
+  ThunderReady: 0
   ThunderPrefab: {fileID: 8274622020637436194, guid: 13e74228efa99724d9915119eaa06b3a,
     type: 3}
   ThunderObjs: []
   RainOn: 0
+  rain: {fileID: 796769980}
+  Sprites:
+  - {fileID: 21300000, guid: 289dd98a533eea440835b53d34f4515b, type: 3}
+  - {fileID: 21300000, guid: bc705f295af1281439e1c5ba2a6b215c, type: 3}
+  - {fileID: 21300000, guid: 35d85cc99f71440499b33719be30577f, type: 3}
+  - {fileID: 21300000, guid: d7eafbd77574e9e43b154f1657e19f6a, type: 3}
+  WeatherUI: {fileID: 1735459902}
 --- !u!1 &1335374975
 GameObject:
   m_ObjectHideFlags: 0
@@ -4944,7 +5005,7 @@ GameObject:
   - component: {fileID: 1436594829}
   m_Layer: 0
   m_Name: ScoreController
-  m_TagString: Untagged
+  m_TagString: ScoreController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4975,7 +5036,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1474362192
 GameObject:
@@ -5277,7 +5338,7 @@ Transform:
   m_Children:
   - {fileID: 405247603}
   m_Father: {fileID: 1985443882}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1509932845
 GameObject:
@@ -5476,7 +5537,7 @@ RectTransform:
   - {fileID: 1962201332}
   - {fileID: 462207266}
   m_Father: {fileID: 1734911766}
-  m_RootOrder: 1
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6029,9 +6090,10 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 791428985}
-  - {fileID: 1575775036}
+  - {fileID: 1735459901}
   - {fileID: 1999954099}
   - {fileID: 876118039}
+  - {fileID: 1575775036}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6040,6 +6102,80 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1735459900
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1735459901}
+  - component: {fileID: 1735459903}
+  - component: {fileID: 1735459902}
+  m_Layer: 5
+  m_Name: WeatherUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1735459901
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1735459900}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1734911766}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.69644076, y: 1}
+  m_AnchorMax: {x: 0.69644076, y: 1}
+  m_AnchoredPosition: {x: 47.5, y: -50.5}
+  m_SizeDelta: {x: 101, y: 101}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1735459902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1735459900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: d7eafbd77574e9e43b154f1657e19f6a, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &1735459903
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1735459900}
+  m_CullTransparentMesh: 0
 --- !u!1 &1739547273
 GameObject:
   m_ObjectHideFlags: 0
@@ -7236,10 +7372,9 @@ Transform:
   - {fileID: 825134122}
   - {fileID: 845775954}
   - {fileID: 1167567418}
-  - {fileID: 1305448927}
   - {fileID: 1501299973}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1985443883
 SpriteRenderer:
@@ -7348,10 +7483,10 @@ RectTransform:
   m_Father: {fileID: 1734911766}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -80, y: 212.20001}
-  m_SizeDelta: {x: 160, y: 92.6}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -80, y: -46.799988}
+  m_SizeDelta: {x: 160, y: 92.600006}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1999954100
 MonoBehaviour:

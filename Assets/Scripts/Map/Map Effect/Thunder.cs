@@ -17,18 +17,21 @@ public class Thunder : MonoBehaviour {
         objects = Physics2D.OverlapCircleAll(transform.position, radius, 1 << LayerMask.NameToLayer("Player"));
     }
 
-    public void CheakTrigger() {
+    public void CheakTrigger(bool RainOn) {
         objects = Physics2D.OverlapCircleAll(transform.position, radius, 1 << LayerMask.NameToLayer("Player"));
         if (gameController.CurrentRound != Start_round) {
             ThunderAnimation.SetBool("ThunderDetermine", true);
             ThunderWarning.Play("Warning");
             foreach (var obj in objects) {
                 PlayerUnit u = obj.gameObject.GetComponent<PlayerUnit>();
-                if (u == null)
-                    return;
-                u.Damage(0.4f * u.MaxHealth);
-                u.controlled = true;
-                u.SetControl(1);
+                if (u != null) {
+                    if (!RainOn)
+                        u.Damage(0.4f * u.MaxHealth);
+                    else
+                        u.Damage(u.MaxHealth);
+                    u.controlled = true;
+                    u.SetControl(1);
+                }
             }
             Destroy(gameObject, 1.2f);
         }

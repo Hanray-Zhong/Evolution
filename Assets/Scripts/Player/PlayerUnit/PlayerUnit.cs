@@ -15,6 +15,7 @@ public class PlayerUnit : MonoBehaviour
     [Header("properties")]
     public float MaxHealth;
     public float Health;
+    public float Drag;
     // public float Weight = 1;
     public float DamageValue;
     [Header("Death")]
@@ -29,6 +30,7 @@ public class PlayerUnit : MonoBehaviour
 
     private void Start() {
         Health = MaxHealth;
+        gameObject.GetComponent<Rigidbody2D>().drag = Drag;
     }
 
     public void SetControl(int LastRound) {
@@ -63,7 +65,7 @@ public class PlayerUnit : MonoBehaviour
             else {
                 scoreController.Team1_Score += 2;
             }
-            // animator.Play("Death");
+            animator.Play("Dead");
         }
         if (Health > MaxHealth) {
             Health = MaxHealth;

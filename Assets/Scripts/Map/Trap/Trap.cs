@@ -14,7 +14,9 @@ public class Trap : MonoBehaviour
         Player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         Player.GetComponent<Animator>().SetBool("Fall", true);
         if (u != null) {
-            u.Damage(Damage);
+            // u.Damage(Damage);
+            u.DeathRound = u.gameController.CurrentRound;
+            u.IsDead = true;
         }
     }
 }
