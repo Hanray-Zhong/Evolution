@@ -14,6 +14,8 @@ public class MapEffect : MonoBehaviour
     [Header("Rain")]
     public bool RainOn;
     public Rain rain;
+    public Animator RainAnim;
+    public GameObject RainEffect;
     [Header("UI")]
     public Sprite[] Sprites;
     public Image WeatherUI;
@@ -30,9 +32,17 @@ public class MapEffect : MonoBehaviour
         DetermineThunder(RainOn);
         // Rain
         if (gameController.CurrentRound % 6 == 0) {
+            RainEffect.SetActive(true);
+            if (!RainOn) {
+                RainAnim.Play("SunToRain");
+            }
             RainOn = true;
         }
         else {
+            RainEffect.SetActive(false);
+            if (RainOn) {
+                RainAnim.Play("RainToSun");
+            }
             RainOn = false;
         }
         rain.DetermineRain(RainOn);

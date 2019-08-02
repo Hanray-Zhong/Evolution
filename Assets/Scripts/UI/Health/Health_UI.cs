@@ -13,7 +13,7 @@ public class Health_UI : MonoBehaviour
             return;
         }
         // 血条跟随
-        gameObject.transform.position = MainCamera.GetComponent<Camera>().WorldToScreenPoint(Player.transform.position);
+        gameObject.transform.position = MainCamera.GetComponent<Camera>().WorldToScreenPoint(Player.transform.position + new Vector3(0, 1));
         // 血条显示
         gameObject.GetComponent<Image>().fillAmount = Player.GetComponent<PlayerUnit>().Health / Player.GetComponent<PlayerUnit>().MaxHealth;
     }

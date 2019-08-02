@@ -19,6 +19,7 @@ public class PlayerController_ : MonoBehaviour {
 	// public float Drag;
 	[Header("Impulse")]
 	public Impulse Impulse;
+	public ShakeCamera shakeCamera;
 	// public float ImpulseCoefficient;
 
 	void FixedUpdate () {
@@ -85,34 +86,16 @@ public class PlayerController_ : MonoBehaviour {
 	// 	}
 	// }
 
-	// 物理引擎
 	private void OnCollisionEnter2D(Collision2D other) {
 		if (other.gameObject.tag == "Player" && IsControlled) {
-			// 计算玩家在两者连线上的速度大小
-			// Vector2 originVelocity = other.gameObject.GetComponent<Rigidbody2D>().velocity;
-			// // 速度计算：
-			// Vector2 thisToOther = other.gameObject.transform.position - gameObject.transform.position;
-			// float angle = Vector2.Angle(originVelocity, thisToOther);
-			// Caculate(other.gameObject, originVelocity, angle);
+			if (other.gameObject.GetComponent<PlayerUnit>().SelfTeam != gameObjgit ect.GetComponent<PlayerUnit>().SelfTeam)
+				StartCoroutine("ShakerCamera");
 			Impulse.ImpulseInteraction(other.gameObject);
 		}
 	}
-	// void Caculate(GameObject other, Vector2 originVelocity, float alpha) {
-	// 	// 已知：
-	// 	float SelfWeight = gameObject.GetComponent<PlayerUnit>().Weight;
-	// 	float OtherWeight = other.GetComponent<PlayerUnit>().Weight;
-	// 	// 所求：
-	// 	float SelfVelocity;
-	// 	float OtherVelocity;
-	// 	float theta;	// 初速度方向和冲击球末速度方向夹角θ
-
-	// 	OtherVelocity = 2 * SelfWeight * originVelocity.magnitude / (SelfWeight + OtherWeight) * Mathf.Cos(alpha);
-	// 	SelfVelocity = Mathf.Sqrt(1 - 4 * SelfWeight * OtherWeight * Mathf.Pow(Mathf.Cos(alpha), 2) / Mathf.Pow((SelfWeight + OtherWeight), 2)) * originVelocity.magnitude;
-	// 	theta = 360 * Mathf.Asin(OtherWeight * Mathf.Sin(2 * alpha) / Mathf.Sqrt(Mathf.Pow(SelfWeight, 2) + Mathf.Pow(OtherWeight, 2) - 2 * SelfWeight * OtherWeight * Mathf.Cos(2 * alpha))) / (2 * Mathf.PI);
-
-	// 	Debug.Log("Alpha = " + alpha);
-	// 	Debug.Log("Theta = " + theta);
-	// 	other.GetComponent<Rigidbody2D>().velocity = Quaternion.Euler(0, 0, alpha) * originVelocity * OtherVelocity;
-	// 	gameObject.GetComponent<Rigidbody2D>().velocity = Quaternion.Euler(0, 0, theta) * originVelocity * SelfVelocity;
-	// }
+	IEnumerator ShakerCamera() {
+		shakeCamera.enabled = true;
+		yield return new WaitForSeconds(0.1f);
+		shakeCamera.enabled = false;
+	}
 }
