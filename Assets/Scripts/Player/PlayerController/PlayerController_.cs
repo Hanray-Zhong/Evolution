@@ -88,7 +88,7 @@ public class PlayerController_ : MonoBehaviour {
 
 	private void OnCollisionEnter2D(Collision2D other) {
 		if (other.gameObject.tag == "Player" && IsControlled) {
-			if (other.gameObject.GetComponent<PlayerUnit>().SelfTeam != gameObjgit ect.GetComponent<PlayerUnit>().SelfTeam)
+			if (other.gameObject.GetComponent<PlayerUnit>().SelfTeam != gameObject.GetComponent<PlayerUnit>().SelfTeam)
 				StartCoroutine("ShakerCamera");
 			Impulse.ImpulseInteraction(other.gameObject);
 		}

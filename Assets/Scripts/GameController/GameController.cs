@@ -107,6 +107,9 @@ public class GameController : MonoBehaviour
             IsControlled = currentPlayer.GetComponent<PlayerController_>().IsControlled;
             ImpulseEnd = currentPlayer.GetComponent<PlayerController_>().ImpulseEnd;
         }
+        MainCamera.GetComponent<MoveCamera>().Target = currentPlayer;
+        yield return new WaitForSeconds(1.5f);
+        MainCamera.GetComponent<MoveCamera>().Target = null;
         
         // 携程结束
         UseCoroutine = false;

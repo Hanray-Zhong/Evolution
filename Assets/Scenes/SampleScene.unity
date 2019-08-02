@@ -1853,7 +1853,11 @@ MonoBehaviour:
   MainCamera: {fileID: 667996733}
   Players:
   - {fileID: 715871247}
+  - {fileID: 573220635}
+  - {fileID: 566155701}
   - {fileID: 487886954}
+  - {fileID: 1301334130}
+  - {fileID: 1052060368}
   currentPlayer: {fileID: 0}
   MapEffect: {fileID: 1305448928}
   ItemController: {fileID: 1501299972}
