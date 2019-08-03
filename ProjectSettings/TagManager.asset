@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Thunder
   - ScoreController
+  - Mushroom
   layers:
   - Default
   - TransparentFX

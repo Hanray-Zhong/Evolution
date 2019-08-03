@@ -19,6 +19,7 @@ public class PlayerController_ : MonoBehaviour {
 	// public float Drag;
 	[Header("Impulse")]
 	public Impulse Impulse;
+	public AudioSource CollisionVoice;
 	public ShakeCamera shakeCamera;
 	// public float ImpulseCoefficient;
 
@@ -61,6 +62,7 @@ public class PlayerController_ : MonoBehaviour {
 		if (impulse == 1 && !ImpulseEnd) {
 			// this.gameObject.GetComponent<Rigidbody2D>().AddForce(MoveDir * Impulse_force, ForceMode2D.Impulse);
 			this.gameObject.GetComponent<Rigidbody2D>().velocity = MoveDir * (Impulse_force / 100) * MAX_Speed;
+			Debug.Log(this.gameObject.GetComponent<Rigidbody2D>().velocity.magnitude);
 			Impulse_force = 0;
 			ImpulseEnd = true;
 			gameController.ImpulseEnd = ImpulseEnd;
@@ -88,12 +90,18 @@ public class PlayerController_ : MonoBehaviour {
 
 	private void OnCollisionEnter2D(Collision2D other) {
 		if (other.gameObject.tag == "Player" && IsControlled) {
-			if (other.gameObject.GetComponent<PlayerUnit>().SelfTeam != gameObject.GetComponent<PlayerUnit>().SelfTeam)
-				StartCoroutine("ShakerCamera");
+			CollisionVoice.Play();
+			if (other.gameObject.GetComponent<PlayerUnit>().SelfTeam != gameObject.GetComponent<PlayerUnit>().SelfTeam && ImpulseEnd)
+				StartCoroutine(ShakerCamera(0.1f));
 			Impulse.ImpulseInteraction(other.gameObject);
 		}
+		if (other.gameObject.tag == "Mushroom" && ImpulseEnd) {
+			CollisionVoice.Play();
+			StartCoroutine(ShakerCamera(0.4f));
+		}
 	}
-	IEnumerator ShakerCamera() {
+	IEnumerator ShakerCamera(float ShakeStrength) {
+		shakeCamera.ShakeStrength = ShakeStrength;
 		shakeCamera.enabled = true;
 		yield return new WaitForSeconds(0.1f);
 		shakeCamera.enabled = false;

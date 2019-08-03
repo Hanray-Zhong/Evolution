@@ -9,7 +9,7 @@ public class ShakeCamera : MonoBehaviour
 
     void Update () {
         transform.localPosition -= deltaPos;
-        deltaPos = Random.insideUnitSphere / ShakeStrength;
+        deltaPos = Random.insideUnitSphere * ShakeStrength;
         transform.localPosition += deltaPos;
     }
     

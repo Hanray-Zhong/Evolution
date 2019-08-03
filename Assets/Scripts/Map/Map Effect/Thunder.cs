@@ -8,6 +8,7 @@ public class Thunder : MonoBehaviour {
     public Animator ThunderAnimation;
     public Animator ThunderWarning;
     public int Start_round;
+    public AudioSource ThunderVoice;
 
     private void Awake() {
         gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
@@ -20,6 +21,7 @@ public class Thunder : MonoBehaviour {
     public void CheakTrigger(bool RainOn) {
         objects = Physics2D.OverlapCircleAll(transform.position, radius, 1 << LayerMask.NameToLayer("Player"));
         if (gameController.CurrentRound != Start_round) {
+            ThunderVoice.Play();
             ThunderAnimation.SetBool("ThunderDetermine", true);
             ThunderWarning.Play("Warning");
             foreach (var obj in objects) {

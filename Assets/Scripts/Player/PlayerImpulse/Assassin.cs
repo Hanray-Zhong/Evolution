@@ -14,8 +14,9 @@ public class Assassin : Impulse
 		// float weight = gameObject.GetComponent<PlayerUnit>().Weight;
 		// other.gameObject.GetComponent<Rigidbody2D>().velocity = Dir.normalized * velocity * weight / other_unit.Weight;
 		// this.gameObject.GetComponent<Rigidbody2D>().drag = 30;
-        if (self_unit.SelfTeam != other_unit.SelfTeam)
-			other_unit.Damage(self_unit.DamageValue + other_unit.MaxHealth * 0.2f * gameObject.GetComponent<Rigidbody2D>().velocity.magnitude / gameObject.GetComponent<PlayerController_>().MAX_Speed);
+        if (self_unit.SelfTeam != other_unit.SelfTeam) {
+			other_unit.Damage(self_unit.DamageValue + 0.25f * other_unit.MaxHealth);
+		}
         else
             return;
 	}

@@ -14,10 +14,10 @@ public class Coin : MonoBehaviour
             PlayerUnit u = other.GetComponent<PlayerUnit>();
             if (u != null) {
                 if (u.SelfTeam == Team.Team_1) {
-                    scoreController.Team1_Score += 4;
+                    scoreController.Team1_Score += 2;
                 }
                 else {
-                    scoreController.Team2_Score += 4;
+                    scoreController.Team2_Score += 2;
                 }
             }
             Destroy(gameObject);

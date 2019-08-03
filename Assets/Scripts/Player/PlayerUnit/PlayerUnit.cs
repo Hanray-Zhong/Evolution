@@ -22,6 +22,7 @@ public class PlayerUnit : MonoBehaviour
     public bool IsDead = false;
     public int Death;
     public Vector2 ResurrectionPos;
+    public AudioSource FallVoice;
     public int DeathRound;
     [Header("Controlled")]
     public bool controlled;
@@ -60,10 +61,10 @@ public class PlayerUnit : MonoBehaviour
             this.DeathRound = gameController.CurrentRound;
             IsDead = true;
             if (SelfTeam == Team.Team_1) {
-                scoreController.Team2_Score += 2;
+                scoreController.Team2_Score += 3;
             }
             else {
-                scoreController.Team1_Score += 2;
+                scoreController.Team1_Score += 3;
             }
             animator.Play("Dead");
         }
