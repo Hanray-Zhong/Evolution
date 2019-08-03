@@ -62,7 +62,6 @@ public class PlayerController_ : MonoBehaviour {
 		if (impulse == 1 && !ImpulseEnd) {
 			// this.gameObject.GetComponent<Rigidbody2D>().AddForce(MoveDir * Impulse_force, ForceMode2D.Impulse);
 			this.gameObject.GetComponent<Rigidbody2D>().velocity = MoveDir * (Impulse_force / 100) * MAX_Speed;
-			Debug.Log(this.gameObject.GetComponent<Rigidbody2D>().velocity.magnitude);
 			Impulse_force = 0;
 			ImpulseEnd = true;
 			gameController.ImpulseEnd = ImpulseEnd;
