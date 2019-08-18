@@ -69,7 +69,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: fdd4c97aa4caa334ba72da469e62146e, type: 3}
-  m_Color: {r: 0, g: 0.28235295, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 7697614412782340868}
   - component: {fileID: 7697614412782340869}
   - component: {fileID: 7697614412782340870}
+  - component: {fileID: 4072873005346482462}
   - component: {fileID: 7697614412782340888}
   - component: {fileID: 7697614412782340871}
   - component: {fileID: 7697614412782340864}
@@ -219,7 +220,7 @@ Rigidbody2D:
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!95 &7697614412782340895
@@ -271,8 +272,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsControlled: 0
   ImpulseEnd: 1
-  gameInput: {fileID: 7697614412782340870}
+  gameInput: {fileID: 4072873005346482462}
   gameController: {fileID: 0}
+  isAndroid: 1
+  MobileButton: {fileID: 0}
+  joystick: {fileID: 0}
   DirectionArrow: {fileID: 7697614412083275066}
   Impulse_force: 0
   MAX_Speed: 42
@@ -292,6 +296,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainCamera: {fileID: 0}
+--- !u!114 &4072873005346482462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7697614412782340865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7302119742839942950d506c0f51214, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joystick: {fileID: 0}
+  ImpulseButton: {fileID: 0}
+  ImpulseUpButton: {fileID: 0}
+  ImpulseDownButton: {fileID: 0}
 --- !u!114 &7697614412782340888
 MonoBehaviour:
   m_ObjectHideFlags: 0

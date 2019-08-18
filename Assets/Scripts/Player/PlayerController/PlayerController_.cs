@@ -5,13 +5,17 @@ using UnityEngine;
 public class PlayerController_ : MonoBehaviour {
 	private float impulse;
 	private float impulse_Change;
-	private float impulseOffset;
+	// private float impulseOffset;
 	private Vector2 MoveDir;
 	[Header("Controller")]
 	public bool IsControlled = false;
 	public bool ImpulseEnd = true;
 	public GameInput gameInput;
 	public GameController gameController;
+	[Header("Android Controller")]
+	public bool isAndroid;
+	public GameObject MobileButton;
+	public bl_Joystick joystick;
 	[Header("Move")]
 	public GameObject DirectionArrow;
 	public float Impulse_force;
@@ -25,17 +29,17 @@ public class PlayerController_ : MonoBehaviour {
 
 	void FixedUpdate () {
 		InputConfiguration();
-		StartMove();
 		StartImpulse();
+		StartMove();
 		// MyDrag();
 		// VisibleIsControlled();
 	}
 	void InputConfiguration () {
-		if (gameInput == null || ImpulseEnd) {
+		if (gameInput == null || ImpulseEnd || joystick == null) {
 			return;
 		}
+		
 		MoveDir = gameInput.GetMoveDir();
-		impulseOffset = gameInput.GetInputInteraction() - impulse;
 		impulse = gameInput.GetInputInteraction();
 		impulse_Change = gameInput.GetImpulseUP() - gameInput.GetImpulseDOWN();
 	}
@@ -94,7 +98,7 @@ public class PlayerController_ : MonoBehaviour {
 				StartCoroutine(ShakerCamera(0.1f));
 			Impulse.ImpulseInteraction(other.gameObject);
 		}
-		if (other.gameObject.tag == "Mushroom" && ImpulseEnd) {
+		if (other.gameObject.tag == "Mushroom" && ImpulseEnd && gameObject.GetComponent<Rigidbody2D>().velocity.magnitude > 15) {
 			CollisionVoice.Play();
 			StartCoroutine(ShakerCamera(0.4f));
 		}

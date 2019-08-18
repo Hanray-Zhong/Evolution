@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 8443299901552780957}
   - component: {fileID: 8443299901552780946}
   - component: {fileID: 8443299901552780947}
+  - component: {fileID: 5372534807948601660}
   - component: {fileID: 8443299901552780944}
   - component: {fileID: 8443299901552780945}
   - component: {fileID: 8443299901552780950}
@@ -192,8 +193,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsControlled: 0
   ImpulseEnd: 1
-  gameInput: {fileID: 8443299901552780947}
+  gameInput: {fileID: 5372534807948601660}
   gameController: {fileID: 0}
+  isAndroid: 1
+  MobileButton: {fileID: 0}
+  joystick: {fileID: 0}
   DirectionArrow: {fileID: 8443299901166815269}
   Impulse_force: 0
   MAX_Speed: 42
@@ -213,6 +217,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainCamera: {fileID: 0}
+--- !u!114 &5372534807948601660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8443299901552780951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7302119742839942950d506c0f51214, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joystick: {fileID: 0}
+  ImpulseButton: {fileID: 0}
+  ImpulseUpButton: {fileID: 0}
+  ImpulseDownButton: {fileID: 0}
 --- !u!114 &8443299901552780944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -595,7 +615,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: fdd4c97aa4caa334ba72da469e62146e, type: 3}
-  m_Color: {r: 0, g: 0.28235295, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
