@@ -18,15 +18,24 @@ public class MoveCamera : MonoBehaviour
     private float cameraWidth;
     public GameObject Target;
     [Header("Android")]
-    public float MoveSpeed;
     public bool isAndroid;
+    public float MoveSpeed;
+    public ButtonTrigger[] Buttons;
     private Vector2 lastPos;
     
     private void Start() {
         Init();
         UpdateBounds();
     }
-
+    private void Update() {
+        foreach (var button in Buttons) {
+            if (button.ClickOn == 1) {
+                IsFollowing = false;
+                return;
+            }
+        }
+        IsFollowing = true;
+    }
     void LateUpdate() {
         if (!IsFollowing)
             return;
