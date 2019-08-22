@@ -8,12 +8,14 @@ public class MapEffect : MonoBehaviour
     public GameController gameController;
     public ItemGenerator Generator;
     [Header("Thunder")]
+    public bool HavaThunder = true;
     public bool ThunderReady;
     public GameObject ThunderPrefab;
     public GameObject[] ThunderObjs;
     [Header("Rain")]
+    public bool HavaRain = true;
     public bool RainOn;
-    public Rain rain;
+    public GameObject[] Players;
     public Animator RainAnim;
     public GameObject RainEffect;
     [Header("UI")]
@@ -23,14 +25,33 @@ public class MapEffect : MonoBehaviour
 
     public void InitPerRound() {
         // Thunder
+        if (HavaThunder) {
+            InitPerRound_Thunder();
+        }
+        // Rain
+        if (HavaRain) {
+            InitPerRound_Rain();
+        }
+        // UI
+        InitPerRound_UI();
+    }
+
+    private void InitPerRound_Thunder() {
         if (gameController.CurrentRound % 5 != 3) {
             ThunderReady = true;
         }
         if (gameController.CurrentRound % 5 == 3 && ThunderReady) {
-            Thunder();
+            if (ThunderReady) {
+                Generator.GenerateRandom(5, ThunderPrefab); 
+                ThunderReady = false;
+            }
         }
-        DetermineThunder(RainOn);
-        // Rain
+        ThunderObjs = GameObject.FindGameObjectsWithTag("Thunder");
+        foreach (var item in ThunderObjs) {
+            item.GetComponent<Thunder>().CheakTrigger(RainOn);
+        }
+    }
+    private void InitPerRound_Rain() {
         if (gameController.CurrentRound % 6 == 0) {
             RainEffect.SetActive(true);
             if (!RainOn) {
@@ -45,37 +66,35 @@ public class MapEffect : MonoBehaviour
             }
             RainOn = false;
         }
-        rain.DetermineRain(RainOn);
-        // UI
-        if (!ThunderReady && RainOn) {
-            WeatherUI.sprite = Sprites[0];
-            return;
+        if (RainOn) {
+            foreach (var player in Players) {
+                player.GetComponent<Rigidbody2D>().drag = 0.7f * player.GetComponent<PlayerUnit>().Drag;
+            }
         }
-        else if (ThunderReady && RainOn) {
-            WeatherUI.sprite = Sprites[1];
-            return;
-        }
-        else if (!ThunderReady && !RainOn) {
-            WeatherUI.sprite = Sprites[2];
-            return;
-        }
-        else if (ThunderReady && !RainOn) {
-            WeatherUI.sprite = Sprites[3];
+        else {
+            foreach (var player in Players) {
+                player.GetComponent<Rigidbody2D>().drag = player.GetComponent<PlayerUnit>().Drag;
+            }
         }
     }
 
-
-    private void Thunder() {
-        if (ThunderReady) {
-            Generator.GenerateRandom(5, ThunderPrefab); 
-            ThunderReady = false;
+    private void InitPerRound_UI() {
+        if (HavaThunder && HavaRain) {
+            if (!ThunderReady && RainOn) {
+                WeatherUI.sprite = Sprites[0];
+                return;
+            }
+            else if (ThunderReady && RainOn) {
+                WeatherUI.sprite = Sprites[1];
+                return;
+            }
+            else if (!ThunderReady && !RainOn) {
+                WeatherUI.sprite = Sprites[2];
+                return;
+            }
+            else if (ThunderReady && !RainOn) {
+                WeatherUI.sprite = Sprites[3];
+            }
         }
     }
-    public void DetermineThunder(bool rainOn) {
-        ThunderObjs = GameObject.FindGameObjectsWithTag("Thunder");
-        foreach (var item in ThunderObjs) {
-            item.GetComponent<Thunder>().CheakTrigger(rainOn);
-        }
-    }
-
 }

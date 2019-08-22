@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemController : MonoBehaviour
+public class CoinController : MonoBehaviour
 {
     public GameController gameController;
     public ItemGenerator Generator;

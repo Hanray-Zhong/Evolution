@@ -162,9 +162,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsControlled: 0
   ImpulseEnd: 1
-  gameInput: {fileID: 6712753077701629474}
+  gameInput: {fileID: 982869754982969083}
   gameController: {fileID: 0}
-  isAndroid: 1
+  isAndroid: 0
   MobileButton: {fileID: 0}
   joystick: {fileID: 0}
   DirectionArrow: {fileID: 982869755259265911}

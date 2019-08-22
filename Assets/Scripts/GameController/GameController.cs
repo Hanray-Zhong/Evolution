@@ -10,8 +10,8 @@ public class GameController : MonoBehaviour
     public GameObject[] Players;
     public GameObject currentPlayer;
     [Header("Map Source")]
-    public MapEffect MapEffect;
-    public ItemController ItemController;
+    public MapEffect _MapEffect;
+    public CoinController _CoinController;
     [Header("Next Turn Animation")]
     public Animator NextTurnAnimation;
     private AnimatorStateInfo AniInfo;
@@ -84,9 +84,14 @@ public class GameController : MonoBehaviour
             CurrentRound++;
 
         // 回合开始时发生的效果
-        MapEffect.InitPerRound();
-        ItemController.InitPerRound();
-
+        // 地图特效
+        if (_MapEffect != null)
+            _MapEffect.InitPerRound();
+        // 
+        if (_CoinController != null)
+            _CoinController.InitPerRound();
+        
+        // 处理角色异常状态
         foreach (var palyer in Players) {
             PlayerUnit u = palyer.GetComponent<PlayerUnit>();
             if (u != null && u.IsDead) 
