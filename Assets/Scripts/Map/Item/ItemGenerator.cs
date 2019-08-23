@@ -6,7 +6,7 @@ public class ItemGenerator : MonoBehaviour
 {
     public BoxCollider2D[] Colliders;
     public Vector2 Margin;
-    public Vector2 Edge;
+    // public Vector2 Edge;
 
     public void GenerateRandom(int times, GameObject obj) {
         for (int i = 0; i < times; i++) {
@@ -33,6 +33,7 @@ public class ItemGenerator : MonoBehaviour
     }
 
     private void OnDrawGizmosSelected() {
+        if (Colliders.Length == 0) return;
         Gizmos.color = new Color(1, 0, 0, 1);
         foreach (var col in Colliders) {
             Vector3 a = new Vector3(col.bounds.max.x - Margin.x, col.bounds.max.y - Margin.y, 0);

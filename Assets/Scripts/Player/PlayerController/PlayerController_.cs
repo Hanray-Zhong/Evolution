@@ -9,12 +9,12 @@ public class PlayerController_ : MonoBehaviour {
 	private Vector2 MoveDir;
 	[Header("Controller")]
 	public bool IsControlled = false;
+	public GameObject Circle;
 	public bool ImpulseEnd = true;
 	public GameInput gameInput;
 	public GameController gameController;
 	[Header("Android Controller")]
 	public bool isAndroid;
-	public GameObject MobileButton;
 	public bl_Joystick joystick;
 	[Header("Move")]
 	public GameObject DirectionArrow;
@@ -31,11 +31,18 @@ public class PlayerController_ : MonoBehaviour {
 		InputConfiguration();
 		StartImpulse();
 		StartMove();
+		if (IsControlled)
+			Circle.SetActive(true);
+		else
+			Circle.SetActive(false);
 		// MyDrag();
 		// VisibleIsControlled();
 	}
 	void InputConfiguration () {
-		if (gameInput == null || ImpulseEnd || joystick == null) {
+		if (gameInput == null || ImpulseEnd) {
+			return;
+		}
+		if (isAndroid && joystick == null) {
 			return;
 		}
 		

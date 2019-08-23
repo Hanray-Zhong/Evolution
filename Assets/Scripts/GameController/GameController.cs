@@ -65,7 +65,7 @@ public class GameController : MonoBehaviour
     }
 
     IEnumerator SwitchRound() {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         CurrentTurn++;
         currentPlayerID++;
         if (currentPlayerID == Players.Length) {

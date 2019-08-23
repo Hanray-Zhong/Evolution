@@ -18,6 +18,15 @@ public class MapEffect : MonoBehaviour
     public GameObject[] Players;
     public Animator RainAnim;
     public GameObject RainEffect;
+    [Header("DynamicMagma")]
+    public bool HaveDynamicMagma = true;
+    public bool Magma_On;
+    public GameObject DynamicMagma;
+    [Header("Meteorite")]
+    public bool HaveMeteorite = true;
+    public bool MeteoriteReady;
+    public GameObject MeteoritePrefab;
+    public GameObject[] MeteoriteObjs;
     [Header("UI")]
     public Sprite[] Sprites;
     public Image WeatherUI;
@@ -32,6 +41,13 @@ public class MapEffect : MonoBehaviour
         if (HavaRain) {
             InitPerRound_Rain();
         }
+        // Map_2
+        if (HaveDynamicMagma) {
+            InitPerRound_DynamicMagma();
+        }
+        if (HaveMeteorite) {
+            InitPerRound_Meteorite();
+        }
         // UI
         InitPerRound_UI();
     }
@@ -41,10 +57,12 @@ public class MapEffect : MonoBehaviour
             ThunderReady = true;
         }
         if (gameController.CurrentRound % 5 == 3 && ThunderReady) {
-            if (ThunderReady) {
-                Generator.GenerateRandom(5, ThunderPrefab); 
-                ThunderReady = false;
+            if (Generator == null) {
+                Debug.LogError("Error : There is no Generator");
+                return;
             }
+            Generator.GenerateRandom(5, ThunderPrefab); 
+            ThunderReady = false;
         }
         ThunderObjs = GameObject.FindGameObjectsWithTag("Thunder");
         foreach (var item in ThunderObjs) {
@@ -77,7 +95,55 @@ public class MapEffect : MonoBehaviour
             }
         }
     }
-
+    private void InitPerRound_DynamicMagma() {
+        if (gameController.CurrentRound % 3 == 0) {
+            if (!Magma_On) {
+                Magma_On = true;
+                StartCoroutine(DynamicMagma_On(DynamicMagma));
+            }
+        }
+        else {
+            if (Magma_On) {
+                StartCoroutine(DynamicMagma_Off(DynamicMagma));
+                Magma_On = false;
+            }
+        }
+    }
+    IEnumerator DynamicMagma_On(GameObject DynamicMagma) {
+        DynamicMagma.SetActive(true);
+        Color color = DynamicMagma.GetComponent<SpriteRenderer>().color;
+        while (color.a < 1) {
+            color.a += 0.01f;
+            DynamicMagma.GetComponent<SpriteRenderer>().color = color;
+            yield return new WaitForSeconds(0.005f);
+        }
+    }
+    IEnumerator DynamicMagma_Off(GameObject DynamicMagma) {
+        Color color = DynamicMagma.GetComponent<SpriteRenderer>().color;
+        while (color.a > 0) {
+            color.a -= 0.01f;
+            DynamicMagma.GetComponent<SpriteRenderer>().color = color;
+            yield return new WaitForSeconds(0.005f);
+        }
+        DynamicMagma.SetActive(false);
+    }
+    private void InitPerRound_Meteorite() {
+        if (gameController.CurrentRound % 5 != 3) {
+            MeteoriteReady = true;
+        }
+        if (gameController.CurrentRound % 5 == 3 && MeteoriteReady) {
+            if (Generator == null) {
+                Debug.LogError("Error : There is no Generator");
+                return;
+            }
+            Generator.GenerateRandom(4, MeteoritePrefab); 
+            MeteoriteReady = false;
+        }
+        MeteoriteObjs = GameObject.FindGameObjectsWithTag("Meteorite");
+        foreach (var item in MeteoriteObjs) {
+            item.GetComponent<Meteorite>().CheakTrigger();
+        }
+    }
     private void InitPerRound_UI() {
         if (HavaThunder && HavaRain) {
             if (!ThunderReady && RainOn) {

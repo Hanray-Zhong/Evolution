@@ -28,10 +28,12 @@ public class MoveCamera : MonoBehaviour
         UpdateBounds();
     }
     private void Update() {
-        foreach (var button in Buttons) {
-            if (button.ClickOn == 1) {
-                IsFollowing = false;
-                return;
+        if (isAndroid) {
+            foreach (var button in Buttons) {
+                if (button.ClickOn == 1) {
+                    IsFollowing = false;
+                    return;
+                }
             }
         }
         IsFollowing = true;
