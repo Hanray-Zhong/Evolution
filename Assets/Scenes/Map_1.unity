@@ -112,6 +112,85 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &70745499
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 70745501}
+  - component: {fileID: 70745500}
+  m_Layer: 8
+  m_Name: Circle (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &70745500
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70745499}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 11
+  m_Sprite: {fileID: 21300000, guid: a1e64e1bde40bb64abf6ef0988d0c7ce, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1.91, y: 1.86}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &70745501
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70745499}
+  m_LocalRotation: {x: -0, y: -0, z: -0.005601436, w: 0.9999844}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 11.838871, y: 11.838871, z: 11.83887}
+  m_Children: []
+  m_Father: {fileID: 573220648}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &73149384
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,7 +813,6 @@ MonoBehaviour:
   - {fileID: 301796081}
   - {fileID: 1961572073}
   Margin: {x: 0, y: 0}
-  Edge: {x: 0, y: 0}
 --- !u!1 &417944124
 GameObject:
   m_ObjectHideFlags: 0
@@ -792,6 +870,85 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5, y: 1.5}
   m_EdgeRadius: 0
+--- !u!1 &424722279
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 424722281}
+  - component: {fileID: 424722280}
+  m_Layer: 8
+  m_Name: Circle (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &424722280
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424722279}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 11
+  m_Sprite: {fileID: 21300000, guid: a1e64e1bde40bb64abf6ef0988d0c7ce, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1.91, y: 1.86}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &424722281
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 424722279}
+  m_LocalRotation: {x: -0, y: -0, z: 0.0009316802, w: 0.9999996}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 11.83887, y: 11.83887, z: 11.83887}
+  m_Children: []
+  m_Father: {fileID: 566155714}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &431879405
 GameObject:
   m_ObjectHideFlags: 0
@@ -1040,6 +1197,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5464947613870447288}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &487886967 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5464947613550332618, guid: 682008b12a1e9354188bc076014c5bb3,
+    type: 3}
+  m_PrefabInstance: {fileID: 5464947613870447288}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &515464571 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8839586485039994468, guid: 3069d8121ad50df4ab679120a0d178e8,
@@ -1058,9 +1221,21 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5464947613870447288}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &566155714 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5464947613342302983, guid: 682008b12a1e9354188bc076014c5bb3,
+    type: 3}
+  m_PrefabInstance: {fileID: 5464947613870447288}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &573220635 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5464947613368810915, guid: 682008b12a1e9354188bc076014c5bb3,
+    type: 3}
+  m_PrefabInstance: {fileID: 5464947613870447288}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &573220648 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5464947613368810909, guid: 682008b12a1e9354188bc076014c5bb3,
     type: 3}
   m_PrefabInstance: {fileID: 5464947613870447288}
   m_PrefabAsset: {fileID: 0}
@@ -1528,6 +1703,85 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5, y: 1.5}
   m_EdgeRadius: 0
+--- !u!1 &952299829
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 952299831}
+  - component: {fileID: 952299830}
+  m_Layer: 8
+  m_Name: Circle (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &952299830
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952299829}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 11
+  m_Sprite: {fileID: 21300000, guid: a1e64e1bde40bb64abf6ef0988d0c7ce, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1.91, y: 1.86}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &952299831
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952299829}
+  m_LocalRotation: {x: -0, y: -0, z: -0.99999976, w: 0.00080356}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 11.838877, y: 11.838877, z: 11.83887}
+  m_Children: []
+  m_Father: {fileID: 1052060381}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1035079148
 GameObject:
   m_ObjectHideFlags: 0
@@ -1637,6 +1891,12 @@ BoxCollider2D:
 --- !u!1 &1052060368 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5464947613023924328, guid: 682008b12a1e9354188bc076014c5bb3,
+    type: 3}
+  m_PrefabInstance: {fileID: 5464947613870447288}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1052060381 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5464947613023924322, guid: 682008b12a1e9354188bc076014c5bb3,
     type: 3}
   m_PrefabInstance: {fileID: 5464947613870447288}
   m_PrefabAsset: {fileID: 0}
@@ -1797,6 +2057,12 @@ Transform:
   m_Father: {fileID: 401291954}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1235022598 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5808699662128663844, guid: 682008b12a1e9354188bc076014c5bb3,
+    type: 3}
+  m_PrefabInstance: {fileID: 5464947613870447288}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1237858955
 GameObject:
   m_ObjectHideFlags: 0
@@ -1835,6 +2101,12 @@ Transform:
 --- !u!1 &1301334130 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5464947612736885450, guid: 682008b12a1e9354188bc076014c5bb3,
+    type: 3}
+  m_PrefabInstance: {fileID: 5464947613870447288}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1301334143 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5464947612736885444, guid: 682008b12a1e9354188bc076014c5bb3,
     type: 3}
   m_PrefabInstance: {fileID: 5464947613870447288}
   m_PrefabAsset: {fileID: 0}
@@ -1902,6 +2174,13 @@ MonoBehaviour:
   - {fileID: 1052060368}
   RainAnim: {fileID: 258388519}
   RainEffect: {fileID: 2132886596}
+  HaveDynamicMagma: 0
+  Magma_On: 0
+  DynamicMagma: {fileID: 0}
+  HaveMeteorite: 0
+  MeteoriteReady: 0
+  MeteoritePrefab: {fileID: 0}
+  MeteoriteObjs: []
   Sprites:
   - {fileID: 21300000, guid: 289dd98a533eea440835b53d34f4515b, type: 3}
   - {fileID: 21300000, guid: bc705f295af1281439e1c5ba2a6b215c, type: 3}
@@ -2110,6 +2389,85 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5a3ceaeaad25a84fac6922707a88451, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1473976911
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1473976913}
+  - component: {fileID: 1473976912}
+  m_Layer: 8
+  m_Name: Circle (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &1473976912
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1473976911}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 11
+  m_Sprite: {fileID: 21300000, guid: a1e64e1bde40bb64abf6ef0988d0c7ce, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1.91, y: 1.86}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1473976913
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1473976911}
+  m_LocalRotation: {x: -0, y: -0, z: -0.99999976, w: 0.00080356}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 11.838877, y: 11.838877, z: 11.83887}
+  m_Children: []
+  m_Father: {fileID: 1301334143}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1487353115
 GameObject:
   m_ObjectHideFlags: 0
@@ -3155,7 +3513,6 @@ MonoBehaviour:
   - {fileID: 1639214236}
   - {fileID: 1934257602}
   Margin: {x: 0, y: 0}
-  Edge: {x: -0.37, y: -0.36}
 --- !u!1 &1934257599
 GameObject:
   m_ObjectHideFlags: 0
@@ -3578,6 +3935,85 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 25.618122, y: 14.368806}
   m_EdgeRadius: 0
+--- !u!1 &2038578661
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2038578663}
+  - component: {fileID: 2038578662}
+  m_Layer: 8
+  m_Name: Circle (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &2038578662
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038578661}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 11
+  m_Sprite: {fileID: 21300000, guid: a1e64e1bde40bb64abf6ef0988d0c7ce, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1.91, y: 1.86}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &2038578663
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038578661}
+  m_LocalRotation: {x: -0, y: -0, z: -0.9999988, w: 0.0015904307}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 11.838877, y: 11.838877, z: 11.838869}
+  m_Children: []
+  m_Father: {fileID: 487886967}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2132886596 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100004, guid: 9185bc9fedfe3124db8b0b1ae1ee7acf,
@@ -3776,11 +4212,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 3513745390221188659, guid: 6b9d73ae0d6469049be2e4b222ed4868,
-        type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 667996735}
     - target: {fileID: 3513745390143898914, guid: 6b9d73ae0d6469049be2e4b222ed4868,
         type: 3}
       propertyPath: Player
@@ -3811,6 +4242,11 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 1052060368}
+    - target: {fileID: 3513745390221188659, guid: 6b9d73ae0d6469049be2e4b222ed4868,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 667996735}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b9d73ae0d6469049be2e4b222ed4868, type: 3}
 --- !u!1001 &5464947613870447288
@@ -3824,6 +4260,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5464947613342302989, guid: 682008b12a1e9354188bc076014c5bb3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5464947613368810915, guid: 682008b12a1e9354188bc076014c5bb3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5464947613023924328, guid: 682008b12a1e9354188bc076014c5bb3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5464947612736885450, guid: 682008b12a1e9354188bc076014c5bb3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5464947613953038794, guid: 682008b12a1e9354188bc076014c5bb3,
         type: 3}
@@ -3900,31 +4356,16 @@ PrefabInstance:
       propertyPath: shakeCamera
       value: 
       objectReference: {fileID: 667996737}
+    - target: {fileID: 5464947613226143400, guid: 682008b12a1e9354188bc076014c5bb3,
+        type: 3}
+      propertyPath: Circle
+      value: 
+      objectReference: {fileID: 1235022598}
     - target: {fileID: 5464947613226143405, guid: 682008b12a1e9354188bc076014c5bb3,
         type: 3}
       propertyPath: MainCamera
       value: 
       objectReference: {fileID: 667996735}
-    - target: {fileID: 8472632419731923756, guid: 682008b12a1e9354188bc076014c5bb3,
-        type: 3}
-      propertyPath: joystick
-      value: 
-      objectReference: {fileID: 1647370235}
-    - target: {fileID: 8472632419731923756, guid: 682008b12a1e9354188bc076014c5bb3,
-        type: 3}
-      propertyPath: ImpulseButton
-      value: 
-      objectReference: {fileID: 1957582654}
-    - target: {fileID: 8472632419731923756, guid: 682008b12a1e9354188bc076014c5bb3,
-        type: 3}
-      propertyPath: ImpulseUpButton
-      value: 
-      objectReference: {fileID: 785503249}
-    - target: {fileID: 8472632419731923756, guid: 682008b12a1e9354188bc076014c5bb3,
-        type: 3}
-      propertyPath: ImpulseDownButton
-      value: 
-      objectReference: {fileID: 437881875}
     - target: {fileID: 5464947613226143406, guid: 682008b12a1e9354188bc076014c5bb3,
         type: 3}
       propertyPath: gameController
@@ -3955,31 +4396,16 @@ PrefabInstance:
       propertyPath: shakeCamera
       value: 
       objectReference: {fileID: 667996737}
+    - target: {fileID: 5464947613368810904, guid: 682008b12a1e9354188bc076014c5bb3,
+        type: 3}
+      propertyPath: Circle
+      value: 
+      objectReference: {fileID: 70745499}
     - target: {fileID: 5464947613368810919, guid: 682008b12a1e9354188bc076014c5bb3,
         type: 3}
       propertyPath: MainCamera
       value: 
       objectReference: {fileID: 667996735}
-    - target: {fileID: 5652669701703057501, guid: 682008b12a1e9354188bc076014c5bb3,
-        type: 3}
-      propertyPath: joystick
-      value: 
-      objectReference: {fileID: 1647370235}
-    - target: {fileID: 5652669701703057501, guid: 682008b12a1e9354188bc076014c5bb3,
-        type: 3}
-      propertyPath: ImpulseButton
-      value: 
-      objectReference: {fileID: 1957582654}
-    - target: {fileID: 5652669701703057501, guid: 682008b12a1e9354188bc076014c5bb3,
-        type: 3}
-      propertyPath: ImpulseUpButton
-      value: 
-      objectReference: {fileID: 785503249}
-    - target: {fileID: 5652669701703057501, guid: 682008b12a1e9354188bc076014c5bb3,
-        type: 3}
-      propertyPath: ImpulseDownButton
-      value: 
-      objectReference: {fileID: 437881875}
     - target: {fileID: 5464947613368810917, guid: 682008b12a1e9354188bc076014c5bb3,
         type: 3}
       propertyPath: gameController
@@ -4010,31 +4436,16 @@ PrefabInstance:
       propertyPath: shakeCamera
       value: 
       objectReference: {fileID: 667996737}
+    - target: {fileID: 5464947613342302978, guid: 682008b12a1e9354188bc076014c5bb3,
+        type: 3}
+      propertyPath: Circle
+      value: 
+      objectReference: {fileID: 424722279}
     - target: {fileID: 5464947613342302977, guid: 682008b12a1e9354188bc076014c5bb3,
         type: 3}
       propertyPath: MainCamera
       value: 
       objectReference: {fileID: 667996735}
-    - target: {fileID: 1971665589165358040, guid: 682008b12a1e9354188bc076014c5bb3,
-        type: 3}
-      propertyPath: joystick
-      value: 
-      objectReference: {fileID: 1647370235}
-    - target: {fileID: 1971665589165358040, guid: 682008b12a1e9354188bc076014c5bb3,
-        type: 3}
-      propertyPath: ImpulseButton
-      value: 
-      objectReference: {fileID: 1957582654}
-    - target: {fileID: 1971665589165358040, guid: 682008b12a1e9354188bc076014c5bb3,
-        type: 3}
-      propertyPath: ImpulseUpButton
-      value: 
-      objectReference: {fileID: 785503249}
-    - target: {fileID: 1971665589165358040, guid: 682008b12a1e9354188bc076014c5bb3,
-        type: 3}
-      propertyPath: ImpulseDownButton
-      value: 
-      objectReference: {fileID: 437881875}
     - target: {fileID: 5464947613342302991, guid: 682008b12a1e9354188bc076014c5bb3,
         type: 3}
       propertyPath: gameController
@@ -4065,31 +4476,16 @@ PrefabInstance:
       propertyPath: shakeCamera
       value: 
       objectReference: {fileID: 667996737}
+    - target: {fileID: 5464947613550332630, guid: 682008b12a1e9354188bc076014c5bb3,
+        type: 3}
+      propertyPath: Circle
+      value: 
+      objectReference: {fileID: 2038578661}
     - target: {fileID: 5464947613550332629, guid: 682008b12a1e9354188bc076014c5bb3,
         type: 3}
       propertyPath: MainCamera
       value: 
       objectReference: {fileID: 667996735}
-    - target: {fileID: 1837977770922911949, guid: 682008b12a1e9354188bc076014c5bb3,
-        type: 3}
-      propertyPath: joystick
-      value: 
-      objectReference: {fileID: 1647370235}
-    - target: {fileID: 1837977770922911949, guid: 682008b12a1e9354188bc076014c5bb3,
-        type: 3}
-      propertyPath: ImpulseButton
-      value: 
-      objectReference: {fileID: 1957582654}
-    - target: {fileID: 1837977770922911949, guid: 682008b12a1e9354188bc076014c5bb3,
-        type: 3}
-      propertyPath: ImpulseUpButton
-      value: 
-      objectReference: {fileID: 785503249}
-    - target: {fileID: 1837977770922911949, guid: 682008b12a1e9354188bc076014c5bb3,
-        type: 3}
-      propertyPath: ImpulseDownButton
-      value: 
-      objectReference: {fileID: 437881875}
     - target: {fileID: 5464947613550332628, guid: 682008b12a1e9354188bc076014c5bb3,
         type: 3}
       propertyPath: gameController
@@ -4120,31 +4516,16 @@ PrefabInstance:
       propertyPath: shakeCamera
       value: 
       objectReference: {fileID: 667996737}
+    - target: {fileID: 5464947612736885455, guid: 682008b12a1e9354188bc076014c5bb3,
+        type: 3}
+      propertyPath: Circle
+      value: 
+      objectReference: {fileID: 1473976911}
     - target: {fileID: 5464947612736885454, guid: 682008b12a1e9354188bc076014c5bb3,
         type: 3}
       propertyPath: MainCamera
       value: 
       objectReference: {fileID: 667996735}
-    - target: {fileID: 8391569027534380385, guid: 682008b12a1e9354188bc076014c5bb3,
-        type: 3}
-      propertyPath: joystick
-      value: 
-      objectReference: {fileID: 1647370235}
-    - target: {fileID: 8391569027534380385, guid: 682008b12a1e9354188bc076014c5bb3,
-        type: 3}
-      propertyPath: ImpulseButton
-      value: 
-      objectReference: {fileID: 1957582654}
-    - target: {fileID: 8391569027534380385, guid: 682008b12a1e9354188bc076014c5bb3,
-        type: 3}
-      propertyPath: ImpulseUpButton
-      value: 
-      objectReference: {fileID: 785503249}
-    - target: {fileID: 8391569027534380385, guid: 682008b12a1e9354188bc076014c5bb3,
-        type: 3}
-      propertyPath: ImpulseDownButton
-      value: 
-      objectReference: {fileID: 437881875}
     - target: {fileID: 5464947612736885452, guid: 682008b12a1e9354188bc076014c5bb3,
         type: 3}
       propertyPath: gameController
@@ -4175,11 +4556,86 @@ PrefabInstance:
       propertyPath: shakeCamera
       value: 
       objectReference: {fileID: 667996737}
+    - target: {fileID: 5464947613023924333, guid: 682008b12a1e9354188bc076014c5bb3,
+        type: 3}
+      propertyPath: Circle
+      value: 
+      objectReference: {fileID: 952299829}
     - target: {fileID: 5464947613023924332, guid: 682008b12a1e9354188bc076014c5bb3,
         type: 3}
       propertyPath: MainCamera
       value: 
       objectReference: {fileID: 667996735}
+    - target: {fileID: 5464947613023924330, guid: 682008b12a1e9354188bc076014c5bb3,
+        type: 3}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 515464571}
+    - target: {fileID: 5464947613023924330, guid: 682008b12a1e9354188bc076014c5bb3,
+        type: 3}
+      propertyPath: scoreController
+      value: 
+      objectReference: {fileID: 1436594829}
+    - target: {fileID: 1837977770922911949, guid: 682008b12a1e9354188bc076014c5bb3,
+        type: 3}
+      propertyPath: joystick
+      value: 
+      objectReference: {fileID: 1647370235}
+    - target: {fileID: 1837977770922911949, guid: 682008b12a1e9354188bc076014c5bb3,
+        type: 3}
+      propertyPath: ImpulseButton
+      value: 
+      objectReference: {fileID: 1957582654}
+    - target: {fileID: 1837977770922911949, guid: 682008b12a1e9354188bc076014c5bb3,
+        type: 3}
+      propertyPath: ImpulseUpButton
+      value: 
+      objectReference: {fileID: 785503249}
+    - target: {fileID: 1837977770922911949, guid: 682008b12a1e9354188bc076014c5bb3,
+        type: 3}
+      propertyPath: ImpulseDownButton
+      value: 
+      objectReference: {fileID: 437881875}
+    - target: {fileID: 5464947611865929891, guid: 682008b12a1e9354188bc076014c5bb3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5464947611879080235, guid: 682008b12a1e9354188bc076014c5bb3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5464947612460079133, guid: 682008b12a1e9354188bc076014c5bb3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5464947613486659331, guid: 682008b12a1e9354188bc076014c5bb3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8391569027534380385, guid: 682008b12a1e9354188bc076014c5bb3,
+        type: 3}
+      propertyPath: joystick
+      value: 
+      objectReference: {fileID: 1647370235}
+    - target: {fileID: 8391569027534380385, guid: 682008b12a1e9354188bc076014c5bb3,
+        type: 3}
+      propertyPath: ImpulseButton
+      value: 
+      objectReference: {fileID: 1957582654}
+    - target: {fileID: 8391569027534380385, guid: 682008b12a1e9354188bc076014c5bb3,
+        type: 3}
+      propertyPath: ImpulseUpButton
+      value: 
+      objectReference: {fileID: 785503249}
+    - target: {fileID: 8391569027534380385, guid: 682008b12a1e9354188bc076014c5bb3,
+        type: 3}
+      propertyPath: ImpulseDownButton
+      value: 
+      objectReference: {fileID: 437881875}
     - target: {fileID: 337607945854249720, guid: 682008b12a1e9354188bc076014c5bb3,
         type: 3}
       propertyPath: joystick
@@ -4200,16 +4656,66 @@ PrefabInstance:
       propertyPath: ImpulseDownButton
       value: 
       objectReference: {fileID: 437881875}
-    - target: {fileID: 5464947613023924330, guid: 682008b12a1e9354188bc076014c5bb3,
+    - target: {fileID: 8472632419731923756, guid: 682008b12a1e9354188bc076014c5bb3,
         type: 3}
-      propertyPath: gameController
+      propertyPath: joystick
       value: 
-      objectReference: {fileID: 515464571}
-    - target: {fileID: 5464947613023924330, guid: 682008b12a1e9354188bc076014c5bb3,
+      objectReference: {fileID: 1647370235}
+    - target: {fileID: 8472632419731923756, guid: 682008b12a1e9354188bc076014c5bb3,
         type: 3}
-      propertyPath: scoreController
+      propertyPath: ImpulseButton
       value: 
-      objectReference: {fileID: 1436594829}
+      objectReference: {fileID: 1957582654}
+    - target: {fileID: 8472632419731923756, guid: 682008b12a1e9354188bc076014c5bb3,
+        type: 3}
+      propertyPath: ImpulseUpButton
+      value: 
+      objectReference: {fileID: 785503249}
+    - target: {fileID: 8472632419731923756, guid: 682008b12a1e9354188bc076014c5bb3,
+        type: 3}
+      propertyPath: ImpulseDownButton
+      value: 
+      objectReference: {fileID: 437881875}
+    - target: {fileID: 1971665589165358040, guid: 682008b12a1e9354188bc076014c5bb3,
+        type: 3}
+      propertyPath: joystick
+      value: 
+      objectReference: {fileID: 1647370235}
+    - target: {fileID: 1971665589165358040, guid: 682008b12a1e9354188bc076014c5bb3,
+        type: 3}
+      propertyPath: ImpulseButton
+      value: 
+      objectReference: {fileID: 1957582654}
+    - target: {fileID: 1971665589165358040, guid: 682008b12a1e9354188bc076014c5bb3,
+        type: 3}
+      propertyPath: ImpulseUpButton
+      value: 
+      objectReference: {fileID: 785503249}
+    - target: {fileID: 1971665589165358040, guid: 682008b12a1e9354188bc076014c5bb3,
+        type: 3}
+      propertyPath: ImpulseDownButton
+      value: 
+      objectReference: {fileID: 437881875}
+    - target: {fileID: 5652669701703057501, guid: 682008b12a1e9354188bc076014c5bb3,
+        type: 3}
+      propertyPath: joystick
+      value: 
+      objectReference: {fileID: 1647370235}
+    - target: {fileID: 5652669701703057501, guid: 682008b12a1e9354188bc076014c5bb3,
+        type: 3}
+      propertyPath: ImpulseButton
+      value: 
+      objectReference: {fileID: 1957582654}
+    - target: {fileID: 5652669701703057501, guid: 682008b12a1e9354188bc076014c5bb3,
+        type: 3}
+      propertyPath: ImpulseUpButton
+      value: 
+      objectReference: {fileID: 785503249}
+    - target: {fileID: 5652669701703057501, guid: 682008b12a1e9354188bc076014c5bb3,
+        type: 3}
+      propertyPath: ImpulseDownButton
+      value: 
+      objectReference: {fileID: 437881875}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 682008b12a1e9354188bc076014c5bb3, type: 3}
 --- !u!1001 &5494478963662096125
