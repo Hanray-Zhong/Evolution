@@ -26,6 +26,9 @@ public class PlayerController_ : MonoBehaviour {
 	public AudioSource CollisionVoice;
 	public ShakeCamera shakeCamera;
 	// public float ImpulseCoefficient;
+	[Header("Map_3")]
+	public GameObject StatueTip;
+	public bool HaveStatue;
 
 	void FixedUpdate () {
 		InputConfiguration();
@@ -37,6 +40,10 @@ public class PlayerController_ : MonoBehaviour {
 			Circle.SetActive(false);
 		// MyDrag();
 		// VisibleIsControlled();
+		if (HaveStatue)
+			StatueTip.SetActive(true);
+		else
+			StatueTip.SetActive(false);
 	}
 	void InputConfiguration () {
 		if (gameInput == null || ImpulseEnd) {

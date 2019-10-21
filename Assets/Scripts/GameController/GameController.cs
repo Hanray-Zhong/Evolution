@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour
     [Header("Map Source")]
     public MapEffect _MapEffect;
     public CoinController _CoinController;
+    public StatueController _StatueController;
     [Header("Next Turn Animation")]
     public Animator NextTurnAnimation;
     private AnimatorStateInfo AniInfo;
@@ -40,6 +41,10 @@ public class GameController : MonoBehaviour
             if (player == null) {
                 continue;
             }
+            // if (player.GetComponent<PlayerUnit>().IsDead && player.GetComponent<PlayerController_>().HaveStatue) {
+            //     player.GetComponent<PlayerController_>().HaveStatue = false;
+            //     currentPlayer.GetComponent<PlayerController_>().HaveStatue = true;
+            // }
             if (player.GetComponent<Rigidbody2D>().velocity != Vector2.zero) {
                 return;
             }
@@ -90,6 +95,9 @@ public class GameController : MonoBehaviour
         // 
         if (_CoinController != null)
             _CoinController.InitPerRound();
+        // 
+        if (_StatueController != null) 
+            _StatueController.InitPerRound();
         
         // 处理角色异常状态
         foreach (var palyer in Players) {

@@ -60,6 +60,10 @@ public class PlayerUnit : MonoBehaviour
         if (gameObject.GetComponent<PlayerUnit>().Health <= 0) {
             this.DeathRound = gameController.CurrentRound;
             IsDead = true;
+            if (gameObject.GetComponent<PlayerController_>().HaveStatue) {
+                gameObject.GetComponent<PlayerController_>().HaveStatue = false;
+                gameController.currentPlayer.GetComponent<PlayerController_>().HaveStatue = true;
+            }
             if (SelfTeam == Team.Team_1) {
                 scoreController.Team2_Score += 3;
             }
