@@ -52,6 +52,10 @@ public class GameController : MonoBehaviour
         if (((IsControlled && ImpulseEnd) || currentPlayer.GetComponent<PlayerUnit>().IsDead || currentPlayer.GetComponent<PlayerUnit>().controlled) && !UseCoroutine) {
             UseCoroutine = true;
             StartCoroutine(SwitchRound());
+
+
+
+
         }
     }
 

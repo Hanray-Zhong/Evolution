@@ -6,6 +6,7 @@ public class Meteorite : MonoBehaviour {
     private Collider2D[] objects;
     private GameController gameController;
     public Animator MeteoriteAnimation;
+    public Animator MeteoriteWarning;
     public AudioSource MeteoriteVoice;
     public GameObject MagmaPrefab;
     public int Start_round;
@@ -22,7 +23,8 @@ public class Meteorite : MonoBehaviour {
         objects = Physics2D.OverlapCircleAll(transform.position, radius, 1 << LayerMask.NameToLayer("Player"));
         if (gameController.CurrentRound != Start_round) {
             // MeteoriteVoice.Play();
-            // MeteoriteAnimation.SetBool("ThunderDetermine", true);
+            MeteoriteWarning.Play("MeteoriteWarningEnd");
+            MeteoriteAnimation.SetBool("MeteoriteDetermine", true);
             StartCoroutine(WarningFade());
             foreach (var obj in objects) {
                 PlayerUnit u = obj.gameObject.GetComponent<PlayerUnit>();
@@ -32,7 +34,7 @@ public class Meteorite : MonoBehaviour {
             }
             GameObject Magma = Instantiate(MagmaPrefab, gameObject.transform.position, Quaternion.identity);
             Magma.GetComponent<MeteoriteMagma>().StartRound = gameController.CurrentRound;
-            Destroy(gameObject, 1.2f);
+            Destroy(gameObject, 3);
         }
     }
     IEnumerator WarningFade() {

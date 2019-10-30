@@ -3,9 +3,11 @@ using System.Collections;
 
 public class MeteoriteMagma : MonoBehaviour {
     public int StartRound;
+    private Animator animator;
     private GameController gameController;
 
     private void Awake() {
+        animator = gameObject.GetComponent<Animator>();
         gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         StartCoroutine(AppearCoroutine());
     }
@@ -24,12 +26,8 @@ public class MeteoriteMagma : MonoBehaviour {
         }
     }
     IEnumerator DestroyCoroutine() {
-        Color color = gameObject.GetComponent<SpriteRenderer>().color;
-        while (color.a > 0) {
-            color.a -= 0.01f;
-            gameObject.GetComponent<SpriteRenderer>().color = color;
-            yield return new WaitForSeconds(0.01f);
-        }
+        animator.Play("MeteoriteMagmaDisappear");
+        yield return new WaitForSeconds(1);
         Destroy(gameObject);
     }
 }
