@@ -30,7 +30,7 @@ public class MusicController : MonoBehaviour
              SceneManager.GetActiveScene().buildIndex == 1) && audioSource.clip != music[0]) {
                 ChangeMusic(music[0]);
             }
-        else if ((SceneManager.GetActiveScene().buildIndex == 2) && audioSource.clip != music[1]) {
+        else if ((SceneManager.GetActiveScene().buildIndex == 3) && audioSource.clip != music[1]) {
                 ChangeMusic(music[1]);
         }
         if (canChange) {

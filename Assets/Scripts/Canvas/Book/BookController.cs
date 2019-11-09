@@ -11,45 +11,61 @@ public class BookController : MonoBehaviour
     public int CurrentIndex;
 
     public void ChangeLeft() {
-        foreach (var name in Names) {
-            name.SetActive(false);
-        }
-        foreach (var Introduction in Introductions) {
-            Introduction.SetActive(false);
-        }
-        foreach (var Skill in Skills) {
-            Skill.SetActive(false);
-        }
-        foreach (var CharacterImage in CharacterImages) {
-            CharacterImage.SetActive(false);
-        }
         if (CurrentIndex > 0) {
             CurrentIndex--;
         }
-        Names[CurrentIndex].SetActive(true);
-        Introductions[CurrentIndex].SetActive(true);
-        Skills[CurrentIndex].SetActive(true);
-        CharacterImages[CurrentIndex].SetActive(true);
+        if (Names.Length != 0) {
+            foreach (var name in Names) {
+                name.SetActive(false);
+            }
+            Names[CurrentIndex].SetActive(true);
+        }
+        if (Introductions.Length != 0) {
+            foreach (var Introduction in Introductions) {
+                Introduction.SetActive(false);
+            }
+            Introductions[CurrentIndex].SetActive(true);
+        }
+        if (Skills.Length != 0) {
+            foreach (var Skill in Skills) {
+                Skill.SetActive(false);
+            }
+            Skills[CurrentIndex].SetActive(true);
+        }
+        if (CharacterImages.Length != 0) {
+            foreach (var CharacterImage in CharacterImages) {
+                CharacterImage.SetActive(false);
+            }
+            CharacterImages[CurrentIndex].SetActive(true);
+        }
     }
     public void ChangeRight() {
-        foreach (var name in Names) {
-            name.SetActive(false);
-        }
-        foreach (var Introduction in Introductions) {
-            Introduction.SetActive(false);
-        }
-        foreach (var Skill in Skills) {
-            Skill.SetActive(false);
-        }
-        foreach (var CharacterImage in CharacterImages) {
-            CharacterImage.SetActive(false);
-        }
-        if (CurrentIndex < 2) {
+        if (CurrentIndex < Names.Length - 1) {
             CurrentIndex++;
         }
-        Names[CurrentIndex].SetActive(true);
-        Introductions[CurrentIndex].SetActive(true);
-        Skills[CurrentIndex].SetActive(true);
-        CharacterImages[CurrentIndex].SetActive(true);
+        if (Names.Length != 0) {
+            foreach (var name in Names) {
+                name.SetActive(false);
+            }
+            Names[CurrentIndex].SetActive(true);
+        }
+        if (Introductions.Length != 0) {
+            foreach (var Introduction in Introductions) {
+                Introduction.SetActive(false);
+            }
+            Introductions[CurrentIndex].SetActive(true);
+        }
+        if (Skills.Length != 0) {
+            foreach (var Skill in Skills) {
+                Skill.SetActive(false);
+            }
+            Skills[CurrentIndex].SetActive(true);
+        }
+        if (CharacterImages.Length != 0) {
+            foreach (var CharacterImage in CharacterImages) {
+                CharacterImage.SetActive(false);
+            }
+            CharacterImages[CurrentIndex].SetActive(true);
+        }
     }
 }

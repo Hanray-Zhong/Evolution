@@ -40,6 +40,7 @@ public class PlayerController_ : MonoBehaviour {
 			Circle.SetActive(false);
 		// MyDrag();
 		// VisibleIsControlled();
+		if (StatueTip == null) return;
 		if (HaveStatue)
 			StatueTip.SetActive(true);
 		else
@@ -106,13 +107,13 @@ public class PlayerController_ : MonoBehaviour {
 	// }
 
 	private void OnCollisionEnter2D(Collision2D other) {
-		if (other.gameObject.tag == "Player" && IsControlled) {
+		if (other.gameObject.tag == "Player" && IsControlled && ImpulseEnd) {
 			CollisionVoice.Play();
 			if (other.gameObject.GetComponent<PlayerUnit>().SelfTeam != gameObject.GetComponent<PlayerUnit>().SelfTeam && ImpulseEnd)
 				StartCoroutine(ShakerCamera(0.1f));
 			Impulse.ImpulseInteraction(other.gameObject);
 		}
-		if (other.gameObject.tag == "Mushroom" && ImpulseEnd && gameObject.GetComponent<Rigidbody2D>().velocity.magnitude > 15) {
+		if (other.gameObject.tag == "Mushroom" && ImpulseEnd && gameObject.GetComponent<Rigidbody2D>().velocity.magnitude > 10) {
 			CollisionVoice.Play();
 			StartCoroutine(ShakerCamera(0.4f));
 		}
